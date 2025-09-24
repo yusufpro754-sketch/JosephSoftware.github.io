@@ -4,36 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joseph Software | Profesyonel Yazılım Çözümleri</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Genel Stiller */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Courier New', monospace;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: #0a0a0a;
-            color: #00ff00;
+            background-color: #0a0a12;
+            color: #e0e0e0;
             overflow-x: hidden;
             position: relative;
         }
 
-        /* Arka plan kod akışı */
+        /* Arka plan kod akışı - Daha belirgin */
         .code-stream {
             position: fixed;
             top: 0;
-            width: 100px;
+            width: 120px;
             height: 100%;
-            color: rgba(0, 255, 0, 0.1);
-            font-size: 14px;
+            color: rgba(0, 200, 255, 0.3);
+            font-size: 16px;
             z-index: -1;
             white-space: nowrap;
             writing-mode: vertical-rl;
             text-orientation: mixed;
-            animation: codeFlow 20s linear infinite;
+            animation: codeFlow 25s linear infinite;
             user-select: none;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            text-shadow: 0 0 5px rgba(0, 200, 255, 0.5);
         }
 
         .code-stream.left {
@@ -55,13 +59,14 @@
 
         /* Header */
         header {
-            background-color: rgba(10, 10, 10, 0.9);
+            background-color: rgba(10, 10, 18, 0.95);
             padding: 20px 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid #00ff00;
+            border-bottom: 1px solid #2a2a3c;
+            backdrop-filter: blur(10px);
         }
 
         .container {
@@ -76,10 +81,9 @@
             text-transform: uppercase;
             letter-spacing: 3px;
             display: inline-block;
-        }
-
-        .logo span {
-            color: #ff0000;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         nav {
@@ -96,11 +100,12 @@
         }
 
         nav ul li a {
-            color: #00ff00;
+            color: #b0b0c0;
             text-decoration: none;
             font-size: 16px;
             transition: all 0.3s;
             position: relative;
+            font-weight: 500;
         }
 
         nav ul li a:hover {
@@ -114,7 +119,7 @@
             height: 2px;
             bottom: -5px;
             left: 0;
-            background-color: #ff0000;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
             transition: width 0.3s;
         }
 
@@ -140,7 +145,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle, rgba(0,255,0,0.1) 0%, rgba(10,10,10,0.9) 70%);
+            background: radial-gradient(circle, rgba(0,198,255,0.1) 0%, rgba(10,10,18,0.9) 70%);
             z-index: -1;
         }
 
@@ -149,7 +154,12 @@
             margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 5px;
-            animation: glitch 1s infinite;
+            animation: glitch 3s infinite;
+            background: linear-gradient(90deg, #00c6ff, #0072ff, #00c6ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: gradient 3s linear infinite;
         }
 
         .hero-content p {
@@ -157,14 +167,15 @@
             margin-bottom: 30px;
             max-width: 800px;
             line-height: 1.6;
+            color: #b0b0c0;
         }
 
         .btn {
             display: inline-block;
             padding: 12px 30px;
-            background-color: transparent;
-            color: #00ff00;
-            border: 2px solid #00ff00;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            color: #0a0a12;
+            border: none;
             text-decoration: none;
             font-size: 16px;
             text-transform: uppercase;
@@ -172,30 +183,50 @@
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
+            font-weight: bold;
+            border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(0, 114, 255, 0.3);
         }
 
         .btn:hover {
-            background-color: #00ff00;
-            color: #0a0a0a;
-            box-shadow: 0 0 20px #00ff00;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 114, 255, 0.5);
         }
 
         @keyframes glitch {
+            0%, 100% {
+                transform: translate(0);
+            }
+            20% {
+                transform: translate(-2px, 2px);
+            }
+            40% {
+                transform: translate(-2px, -2px);
+            }
+            60% {
+                transform: translate(2px, 2px);
+            }
+            80% {
+                transform: translate(2px, -2px);
+            }
+        }
+
+        @keyframes gradient {
             0% {
-                text-shadow: 2px 2px 0 red, -2px -2px 0 blue;
+                background-position: 0% 50%;
             }
             50% {
-                text-shadow: -2px -2px 0 red, 2px 2px 0 blue;
+                background-position: 100% 50%;
             }
             100% {
-                text-shadow: 2px -2px 0 red, -2px 2px 0 blue;
+                background-position: 0% 50%;
             }
         }
 
         /* Özellikler Kataloğu */
         .features {
             padding: 100px 0;
-            background-color: rgba(15, 15, 15, 0.8);
+            background-color: rgba(15, 15, 25, 0.8);
         }
 
         .section-title {
@@ -205,6 +236,7 @@
             text-transform: uppercase;
             letter-spacing: 3px;
             position: relative;
+            color: #ffffff;
         }
 
         .section-title::after {
@@ -212,7 +244,7 @@
             position: absolute;
             width: 100px;
             height: 3px;
-            background-color: #ff0000;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
             bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
@@ -225,18 +257,20 @@
         }
 
         .feature-card {
-            background-color: rgba(20, 20, 20, 0.8);
-            border: 1px solid #00ff00;
+            background: linear-gradient(145deg, #1a1a2a, #0f0f1f);
+            border: 1px solid #2a2a3c;
             padding: 30px;
-            border-radius: 5px;
+            border-radius: 8px;
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
         .feature-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 255, 0, 0.2);
+            box-shadow: 0 15px 30px rgba(0, 114, 255, 0.2);
+            border-color: #0072ff;
         }
 
         .feature-card::before {
@@ -246,8 +280,8 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.1), transparent);
-            transition: left 0.5s;
+            background: linear-gradient(90deg, transparent, rgba(0, 198, 255, 0.1), transparent);
+            transition: left 0.7s;
         }
 
         .feature-card:hover::before {
@@ -257,7 +291,9 @@
         .feature-icon {
             font-size: 40px;
             margin-bottom: 20px;
-            color: #ff0000;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .feature-card h3 {
@@ -270,25 +306,30 @@
             font-size: 16px;
             line-height: 1.6;
             margin-bottom: 20px;
+            color: #b0b0c0;
         }
 
         .feature-select {
-            background-color: transparent;
-            color: #00ff00;
-            border: 1px solid #00ff00;
-            padding: 8px 15px;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            color: #0a0a12;
+            border: none;
+            padding: 10px 20px;
             cursor: pointer;
             transition: all 0.3s;
+            font-weight: bold;
+            border-radius: 4px;
+            width: 100%;
         }
 
         .feature-select:hover {
-            background-color: #00ff00;
-            color: #0a0a0a;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 114, 255, 0.4);
         }
 
         /* Hizmetler */
         .services {
             padding: 100px 0;
+            background-color: rgba(10, 10, 18, 0.8);
         }
 
         .services-grid {
@@ -298,24 +339,28 @@
         }
 
         .service-card {
-            background-color: rgba(20, 20, 20, 0.8);
-            border: 1px solid #00ff00;
+            background: linear-gradient(145deg, #1a1a2a, #0f0f1f);
+            border: 1px solid #2a2a3c;
             padding: 40px 30px;
-            border-radius: 5px;
+            border-radius: 8px;
             text-align: center;
             transition: all 0.3s;
             position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
         .service-card:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(0, 255, 0, 0.3);
+            box-shadow: 0 15px 30px rgba(0, 114, 255, 0.2);
+            border-color: #0072ff;
         }
 
         .service-icon {
             font-size: 50px;
             margin-bottom: 25px;
-            color: #ff0000;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .service-card h3 {
@@ -328,12 +373,13 @@
             font-size: 16px;
             line-height: 1.6;
             margin-bottom: 25px;
+            color: #b0b0c0;
         }
 
         /* İletişim */
         .contact {
             padding: 100px 0;
-            background-color: rgba(15, 15, 15, 0.8);
+            background-color: rgba(15, 15, 25, 0.8);
         }
 
         .contact-form {
@@ -349,6 +395,7 @@
             display: block;
             margin-bottom: 8px;
             font-size: 16px;
+            color: #ffffff;
         }
 
         .form-group input,
@@ -356,10 +403,20 @@
         .form-group select {
             width: 100%;
             padding: 12px;
-            background-color: rgba(30, 30, 30, 0.8);
-            border: 1px solid #00ff00;
-            color: #00ff00;
+            background-color: rgba(30, 30, 40, 0.8);
+            border: 1px solid #2a2a3c;
+            color: #e0e0e0;
             font-size: 16px;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #0072ff;
+            box-shadow: 0 0 10px rgba(0, 114, 255, 0.3);
         }
 
         .form-group textarea {
@@ -369,7 +426,7 @@
 
         .form-group select {
             appearance: none;
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300ff00' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300c6ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
             background-repeat: no-repeat;
             background-position: right 10px center;
             background-size: 16px;
@@ -377,9 +434,9 @@
 
         /* Footer */
         footer {
-            background-color: #000000;
+            background-color: #05050a;
             padding: 50px 0 20px;
-            border-top: 1px solid #00ff00;
+            border-top: 1px solid #2a2a3c;
         }
 
         .footer-content {
@@ -402,7 +459,7 @@
             position: absolute;
             width: 50px;
             height: 2px;
-            background-color: #ff0000;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
             bottom: 0;
             left: 0;
         }
@@ -410,6 +467,7 @@
         .footer-section p {
             line-height: 1.6;
             margin-bottom: 15px;
+            color: #b0b0c0;
         }
 
         .footer-section ul {
@@ -421,21 +479,46 @@
         }
 
         .footer-section ul li a {
-            color: #00ff00;
+            color: #b0b0c0;
             text-decoration: none;
             transition: all 0.3s;
         }
 
         .footer-section ul li a:hover {
-            color: #ffffff;
+            color: #00c6ff;
             padding-left: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            color: #0a0a12;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 114, 255, 0.4);
         }
 
         .copyright {
             text-align: center;
             padding-top: 20px;
-            border-top: 1px solid #333;
+            border-top: 1px solid #2a2a3c;
             font-size: 14px;
+            color: #b0b0c0;
         }
 
         /* Responsive Tasarım */
@@ -443,6 +526,7 @@
             nav {
                 float: none;
                 margin-top: 20px;
+                text-align: center;
             }
             
             nav ul li {
@@ -462,18 +546,28 @@
             .services-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-section h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Yanlardan akan kodlar -->
+    <!-- Yanlardan akan kodlar - Daha belirgin -->
     <div class="code-stream left"></div>
     <div class="code-stream right"></div>
 
     <!-- Header -->
     <header>
         <div class="container">
-            <div class="logo">Joseph <span>Software</span></div>
+            <div class="logo">Joseph Software</div>
             <nav>
                 <ul>
                     <li><a href="#home">Ana Sayfa</a></li>
@@ -501,7 +595,7 @@
             <div class="features-grid">
                 <!-- Özellik 1 -->
                 <div class="feature-card">
-                    <div class="feature-icon">&#60;/&#62;</div>
+                    <div class="feature-icon"><i class="fas fa-code"></i></div>
                     <h3>Web Geliştirme</h3>
                     <p>Modern, responsive ve kullanıcı dostu web siteleri ve web uygulamaları geliştiriyoruz.</p>
                     <button class="feature-select">Bu Özelliği İstiyorum</button>
@@ -509,7 +603,7 @@
                 
                 <!-- Özellik 2 -->
                 <div class="feature-card">
-                    <div class="feature-icon">&#123; &#125;</div>
+                    <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
                     <h3>Mobil Uygulama</h3>
                     <p>iOS ve Android platformları için native ve hibrit mobil uygulama geliştirme hizmeti.</p>
                     <button class="feature-select">Bu Özelliği İstiyorum</button>
@@ -517,7 +611,7 @@
                 
                 <!-- Özellik 3 -->
                 <div class="feature-card">
-                    <div class="feature-icon">&#36;</div>
+                    <div class="feature-icon"><i class="fas fa-shopping-cart"></i></div>
                     <h3>E-Ticaret Çözümleri</h3>
                     <p>Güvenli ve ölçeklenebilir e-ticaret platformları ile online satışlarınızı artırın.</p>
                     <button class="feature-select">Bu Özelliği İstiyorum</button>
@@ -525,7 +619,7 @@
                 
                 <!-- Özellik 4 -->
                 <div class="feature-card">
-                    <div class="feature-icon">&#64;</div>
+                    <div class="feature-icon"><i class="fas fa-building"></i></div>
                     <h3>Kurumsal Yazılım</h3>
                     <p>İş süreçlerinizi optimize eden özelleştirilmiş kurumsal yazılım çözümleri.</p>
                     <button class="feature-select">Bu Özelliği İstiyorum</button>
@@ -533,7 +627,7 @@
                 
                 <!-- Özellik 5 -->
                 <div class="feature-card">
-                    <div class="feature-icon">&#35;</div>
+                    <div class="feature-icon"><i class="fas fa-chart-bar"></i></div>
                     <h3>Veri Analitiği</h3>
                     <p>Büyük veri analizi ve görselleştirme ile iş kararlarınızı veriye dayandırın.</p>
                     <button class="feature-select">Bu Özelliği İstiyorum</button>
@@ -541,7 +635,7 @@
                 
                 <!-- Özellik 6 -->
                 <div class="feature-card">
-                    <div class="feature-icon">&#42;</div>
+                    <div class="feature-icon"><i class="fas fa-cloud"></i></div>
                     <h3>Bulut Çözümleri</h3>
                     <p>Güvenli ve esnek bulut altyapı çözümleri ile iş sürekliliğinizi garanti altına alın.</p>
                     <button class="feature-select">Bu Özelliği İstiyorum</button>
@@ -557,7 +651,7 @@
             <div class="services-grid">
                 <!-- Hizmet 1 -->
                 <div class="service-card">
-                    <div class="service-icon">&#60;?&#62;</div>
+                    <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
                     <h3>Özelleştirilmiş Yazılım</h3>
                     <p>İşletmenizin ihtiyaçlarına özel olarak geliştirilmiş yazılım çözümleri.</p>
                     <a href="#contact" class="btn">Teklif Al</a>
@@ -565,7 +659,7 @@
                 
                 <!-- Hizmet 2 -->
                 <div class="service-card">
-                    <div class="service-icon">&#123;...&#125;</div>
+                    <div class="service-icon"><i class="fas fa-headset"></i></div>
                     <h3>Danışmanlık</h3>
                     <p>Teknoloji stratejinizi belirlemede uzman danışmanlık hizmeti.</p>
                     <a href="#contact" class="btn">Teklif Al</a>
@@ -573,7 +667,7 @@
                 
                 <!-- Hizmet 3 -->
                 <div class="service-card">
-                    <div class="service-icon">&#47;&#47;</div>
+                    <div class="service-icon"><i class="fas fa-tools"></i></div>
                     <h3>Destek & Bakım</h3>
                     <p>Yazılımınızın sürekli güncel ve sorunsuz çalışması için destek hizmeti.</p>
                     <a href="#contact" class="btn">Teklif Al</a>
@@ -626,6 +720,12 @@
                 <div class="footer-section">
                     <h3>Joseph Software</h3>
                     <p>Profesyonel yazılım çözümleri ile işletmenizin dijital dönüşümüne liderlik ediyoruz.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
                 </div>
                 <div class="footer-section">
                     <h3>Hızlı Bağlantılar</h3>
@@ -638,9 +738,9 @@
                 </div>
                 <div class="footer-section">
                     <h3>İletişim Bilgileri</h3>
-                    <p>Email: info@josephsoftware.com</p>
-                    <p>Telefon: +90 123 456 78 90</p>
-                    <p>Adres: Teknopark İstanbul, Sanayi Mah.</p>
+                    <p><i class="fas fa-envelope"></i> info@josephsoftware.com</p>
+                    <p><i class="fas fa-phone"></i> +90 123 456 78 90</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Teknopark İstanbul, Sanayi Mah.</p>
                 </div>
             </div>
             <div class="copyright">
@@ -667,13 +767,13 @@
                 // Her akış için yeterli uzunlukta kod oluştur
                 const codeLength = 500;
                 let codeContent = '';
-                for (let i = 0; i < 5; i++) {
+                for (let i = 0; i < 8; i++) { // Daha fazla satır
                     codeContent += generateRandomCode(codeLength) + '<br>';
                 }
                 stream.innerHTML = codeContent;
                 
                 // Rastgele hız için animasyon süresini ayarla
-                const randomDuration = 15 + Math.random() * 20;
+                const randomDuration = 20 + Math.random() * 15;
                 stream.style.animationDuration = `${randomDuration}s`;
             });
         }
@@ -682,7 +782,14 @@
         document.querySelectorAll('.feature-select').forEach(button => {
             button.addEventListener('click', function() {
                 const featureTitle = this.parentElement.querySelector('h3').textContent;
-                alert(`"${featureTitle}" özelliğini talep ettiniz. En kısa sürede sizinle iletişime geçeceğiz.`);
+                
+                // Butonun rengini değiştirerek seçildiğini göster
+                this.innerHTML = '<i class="fas fa-check"></i> Seçildi';
+                this.style.background = 'linear-gradient(90deg, #00ff88, #00cc66)';
+                this.disabled = true;
+                
+                // Toast benzeri bildirim
+                showNotification(`"${featureTitle}" özelliği listenize eklendi.`);
                 
                 // İsteğe bağlı: Forma yönlendirme
                 document.getElementById('service').value = featureTitle.toLowerCase().includes('web') ? 'web' : 
@@ -691,15 +798,35 @@
                                                           featureTitle.toLowerCase().includes('kurumsal') ? 'enterprise' :
                                                           featureTitle.toLowerCase().includes('veri') ? 'analytics' :
                                                           featureTitle.toLowerCase().includes('bulut') ? 'cloud' : 'web';
-                                                          
-                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
             });
         });
+
+        // Bildirim gösterme fonksiyonu
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.style.position = 'fixed';
+            notification.style.bottom = '20px';
+            notification.style.right = '20px';
+            notification.style.background = 'linear-gradient(90deg, #00c6ff, #0072ff)';
+            notification.style.color = '#0a0a12';
+            notification.style.padding = '15px 25px';
+            notification.style.borderRadius = '4px';
+            notification.style.boxShadow = '0 5px 15px rgba(0,0,0,0.3)';
+            notification.style.zIndex = '10000';
+            notification.style.fontWeight = 'bold';
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
 
         // Form gönderimi
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Mesajınız başarıyla gönderildi. En kısa sürede sizinle iletişime geçeceğiz.');
+            showNotification('Mesajınız başarıyla gönderildi. En kısa sürede sizinle iletişime geçeceğiz.');
             this.reset();
         });
 
@@ -707,7 +834,7 @@
         window.addEventListener('load', initCodeStream);
 
         // Düzgün kaydırma için navigasyon bağlantıları
-        document.querySelectorAll('nav a').forEach(anchor => {
+        document.querySelectorAll('nav a, .btn[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
@@ -721,7 +848,7 @@
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
             if (window.scrollY > 50) {
-                header.style.boxShadow = '0 5px 15px rgba(0, 255, 0, 0.1)';
+                header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.3)';
             } else {
                 header.style.boxShadow = 'none';
             }
