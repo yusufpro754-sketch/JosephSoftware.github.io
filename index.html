@@ -27,7 +27,7 @@
             top: 0;
             width: 120px;
             height: 100%;
-            color: rgba(0, 200, 255, 0.4); /* Daha belirgin mavi ton */
+            color: rgba(0, 200, 255, 0.4);
             font-size: 16px;
             z-index: -1;
             white-space: nowrap;
@@ -37,7 +37,7 @@
             user-select: none;
             font-family: 'Courier New', monospace;
             font-weight: bold;
-            text-shadow: 0 0 8px rgba(0, 200, 255, 0.6); /* Daha belirgin gölge */
+            text-shadow: 0 0 8px rgba(0, 200, 255, 0.6);
         }
 
         .code-stream.left {
@@ -92,6 +92,25 @@
             -webkit-text-fill-color: transparent;
         }
 
+        /* HAMBURGER MENÜ - Mobil navigasyon */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            width: 30px;
+            height: 25px;
+            justify-content: space-between;
+        }
+
+        .menu-toggle span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
         /* NAVİGASYON - Menü öğeleri */
         nav ul {
             list-style: none;
@@ -139,6 +158,8 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+            background: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') no-repeat center center;
+            background-size: cover;
         }
 
         .hero::before {
@@ -148,8 +169,13 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle, rgba(0,198,255,0.1) 0%, rgba(10,10,18,0.9) 70%);
-            z-index: -1;
+            background: rgba(10, 10, 18, 0.7);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
         }
 
         .hero-content h1 {
@@ -449,6 +475,26 @@
         .blog {
             padding: 100px 0;
             background-color: rgba(10, 10, 18, 0.8);
+            background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        .blog::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 18, 0.85);
+            z-index: 1;
+        }
+
+        .blog .container {
+            position: relative;
+            z-index: 2;
         }
 
         .blog-grid {
@@ -513,94 +559,29 @@
             padding-top: 15px;
         }
 
-        /* TAKIM BÖLÜMÜ - Ekibimizin tanıtımı */
-        .team {
-            padding: 100px 0;
-            background-color: rgba(15, 15, 25, 0.8);
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .team-member {
-            text-align: center;
-            background: linear-gradient(145deg, #1a1a2a, #0f0f1f);
-            border: 1px solid #2a2a3c;
-            padding: 30px 20px;
-            border-radius: 8px;
-            transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .team-member:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 114, 255, 0.2);
-        }
-
-        .member-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin: 0 auto 20px;
-            border: 3px solid #2a2a3c;
-        }
-
-        .member-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .team-member h3 {
-            color: #ffffff;
-            margin-bottom: 5px;
-        }
-
-        .team-member .position {
-            color: #00c6ff;
-            margin-bottom: 15px;
-            font-size: 14px;
-        }
-
-        .team-member p {
-            color: #b0b0c0;
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        .member-social {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .member-social a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 35px;
-            height: 35px;
-            background: #2a2a3c;
-            color: #b0b0c0;
-            border-radius: 50%;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-
-        .member-social a:hover {
-            background: linear-gradient(90deg, #00c6ff, #0072ff);
-            color: #0a0a12;
-        }
-
         /* İSTATİSTİKLER BÖLÜMÜ - Başarı istatistikleri */
         .stats {
             padding: 80px 0;
             background: linear-gradient(135deg, #0a0a12, #1a1a2a);
+            background: url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') no-repeat center center;
+            background-size: cover;
+            position: relative;
+        }
+
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 18, 0.8);
+            z-index: 1;
+        }
+
+        .stats .container {
+            position: relative;
+            z-index: 2;
         }
 
         .stats-grid {
@@ -683,6 +664,25 @@
         .contact {
             padding: 100px 0;
             background-color: rgba(15, 15, 25, 0.8);
+            background: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') no-repeat center center;
+            background-size: cover;
+            position: relative;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 15, 25, 0.85);
+            z-index: 1;
+        }
+
+        .contact .container {
+            position: relative;
+            z-index: 2;
         }
 
         .contact-container {
@@ -874,9 +874,25 @@
                 text-align: center;
             }
             
+            .menu-toggle {
+                display: flex;
+                position: absolute;
+                top: 25px;
+                right: 20px;
+            }
+            
+            nav {
+                width: 100%;
+                display: none;
+                margin-top: 20px;
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
             nav ul {
                 flex-direction: column;
-                margin-top: 20px;
             }
             
             nav ul li {
@@ -895,7 +911,6 @@
             .services-grid,
             .portfolio-grid,
             .blog-grid,
-            .team-grid,
             .stats-grid {
                 grid-template-columns: 1fr;
             }
@@ -925,14 +940,18 @@
     <header>
         <div class="container header-container">
             <div class="logo">Joseph Software</div>
-            <nav>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav id="main-nav">
                 <ul>
                     <li><a href="#home">Ana Sayfa</a></li>
                     <li><a href="#features">Özellikler</a></li>
                     <li><a href="#services">Hizmetler</a></li>
                     <li><a href="#portfolio">Projeler</a></li>
                     <li><a href="#blog">Blog</a></li>
-                    <li><a href="#team">Takım</a></li>
                     <li><a href="#contact">İletişim</a></li>
                 </ul>
             </nav>
@@ -992,14 +1011,6 @@
                     <p>Büyük veri analizi ve görselleştirme ile iş kararlarınızı veriye dayandırın.</p>
                     <button class="feature-select">Bu Özelliği İstiyorum</button>
                 </div>
-                
-                <!-- Özellik 6 -->
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-cloud"></i></div>
-                    <h3>Bulut Çözümleri</h3>
-                    <p>Güvenli ve esnek bulut altyapı çözümleri ile iş sürekliliğinizi garanti altına alın.</p>
-                    <button class="feature-select">Bu Özelliği İstiyorum</button>
-                </div>
             </div>
         </div>
     </section>
@@ -1049,7 +1060,7 @@
             <div class="portfolio-grid">
                 <!-- Proje 1 -->
                 <div class="portfolio-item" data-category="web">
-                    <img src="https://placehold.co/600x400/1a1a2a/00c6ff?text=Web+Projesi+1" alt="Web Projesi 1">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Web Projesi 1">
                     <div class="portfolio-overlay">
                         <h3>Kurumsal Web Sitesi</h3>
                         <p>Modern tasarım ve responsive yapı</p>
@@ -1058,7 +1069,7 @@
                 
                 <!-- Proje 2 -->
                 <div class="portfolio-item" data-category="mobile">
-                    <img src="https://placehold.co/600x400/1a1a2a/0072ff?text=Mobil+Uygulama+1" alt="Mobil Uygulama 1">
+                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Mobil Uygulama 1">
                     <div class="portfolio-overlay">
                         <h3>Mobil Uygulama</h3>
                         <p>iOS ve Android için native uygulama</p>
@@ -1067,7 +1078,7 @@
                 
                 <!-- Proje 3 -->
                 <div class="portfolio-item" data-category="ecommerce">
-                    <img src="https://placehold.co/600x400/1a1a2a/00c6ff?text=E-Ticaret+Sitesi" alt="E-Ticaret Sitesi">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="E-Ticaret Sitesi">
                     <div class="portfolio-overlay">
                         <h3>E-Ticaret Platformu</h3>
                         <p>Güvenli alışveriş deneyimi</p>
@@ -1076,7 +1087,7 @@
                 
                 <!-- Proje 4 -->
                 <div class="portfolio-item" data-category="web">
-                    <img src="https://placehold.co/600x400/1a1a2a/0072ff?text=Web+Projesi+2" alt="Web Projesi 2">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Web Projesi 2">
                     <div class="portfolio-overlay">
                         <h3>Kurumsal Portal</h3>
                         <p>İş süreçleri yönetim sistemi</p>
@@ -1094,7 +1105,7 @@
                 <!-- Blog 1 -->
                 <div class="blog-card">
                     <div class="blog-image">
-                        <img src="https://placehold.co/600x400/1a1a2a/00c6ff?text=Yapay+Zeka" alt="Yapay Zeka">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Yapay Zeka">
                     </div>
                     <div class="blog-content">
                         <h3>Yapay Zeka ve Yazılım Geliştirme</h3>
@@ -1109,7 +1120,7 @@
                 <!-- Blog 2 -->
                 <div class="blog-card">
                     <div class="blog-image">
-                        <img src="https://placehold.co/600x400/1a1a2a/0072ff?text=Güvenlik" alt="Güvenlik">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Güvenlik">
                     </div>
                     <div class="blog-content">
                         <h3>Web Uygulama Güvenliği</h3>
@@ -1124,83 +1135,15 @@
                 <!-- Blog 3 -->
                 <div class="blog-card">
                     <div class="blog-image">
-                        <img src="https://placehold.co/600x400/1a1a2a/00c6ff?text=Bulut+Bilişim" alt="Bulut Bilişim">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Teknoloji">
                     </div>
                     <div class="blog-content">
-                        <h3>Bulut Bilişimin Geleceği</h3>
-                        <p>Bulut teknolojilerinin iş dünyasına etkileri ve gelecekteki trendler hakkında analiz.</p>
+                        <h3>Yazılım Geliştirmede Yeni Trendler</h3>
+                        <p>2023 yılında yazılım geliştirme dünyasında öne çıkan trendler ve teknolojiler.</p>
                         <div class="blog-meta">
                             <span><i class="far fa-calendar"></i> 20 Ağustos 2023</span>
                             <span><i class="far fa-user"></i> Joseph Software</span>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TAKIM BÖLÜMÜ - Ekibimizin tanıtımı -->
-    <section class="team" id="team">
-        <div class="container">
-            <h2 class="section-title">Takımımız</h2>
-            <div class="team-grid">
-                <!-- Takım Üyesi 1 -->
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="https://placehold.co/150x150/1a1a2a/00c6ff?text=JS" alt="Joseph Software">
-                    </div>
-                    <h3>Joseph Software</h3>
-                    <div class="position">Kurucu & CEO</div>
-                    <p>10 yılı aşkın yazılım geliştirme deneyimi ile profesyonel çözümler sunuyor.</p>
-                    <div class="member-social">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                    </div>
-                </div>
-                
-                <!-- Takım Üyesi 2 -->
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="https://placehold.co/150x150/1a1a2a/0072ff?text=AS" alt="Ahmet Selim">
-                    </div>
-                    <h3>Ahmet Selim</h3>
-                    <div class="position">Full Stack Developer</div>
-                    <p>Web ve mobil uygulama geliştirme konusunda uzmanlaşmış deneyimli yazılımcı.</p>
-                    <div class="member-social">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                    </div>
-                </div>
-                
-                <!-- Takım Üyesi 3 -->
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="https://placehold.co/150x150/1a1a2a/00c6ff?text=EY" alt="Elif Yılmaz">
-                    </div>
-                    <h3>Elif Yılmaz</h3>
-                    <div class="position">UI/UX Designer</div>
-                    <p>Kullanıcı deneyimi odaklı modern ve şık arayüz tasarımları konusunda uzman.</p>
-                    <div class="member-social">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                    </div>
-                </div>
-                
-                <!-- Takım Üyesi 4 -->
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="https://placehold.co/150x150/1a1a2a/0072ff?text=MK" alt="Mehmet Kaya">
-                    </div>
-                    <h3>Mehmet Kaya</h3>
-                    <div class="position">DevOps Engineer</div>
-                    <p>Bulut altyapıları ve sürekli entegrasyon/deploy süreçleri konusunda uzman.</p>
-                    <div class="member-social">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
             </div>
@@ -1333,7 +1276,6 @@
                                 <option value="ecommerce">E-Ticaret</option>
                                 <option value="enterprise">Kurumsal Yazılım</option>
                                 <option value="analytics">Veri Analitiği</option>
-                                <option value="cloud">Bulut Çözümleri</option>
                                 <option value="consulting">Danışmanlık</option>
                                 <option value="support">Destek & Bakım</option>
                             </select>
@@ -1372,7 +1314,6 @@
                         <li><a href="#services">Hizmetler</a></li>
                         <li><a href="#portfolio">Projeler</a></li>
                         <li><a href="#blog">Blog</a></li>
-                        <li><a href="#team">Takım</a></li>
                         <li><a href="#contact">İletişim</a></li>
                     </ul>
                 </div>
@@ -1384,7 +1325,6 @@
                         <li><a href="#services">E-Ticaret</a></li>
                         <li><a href="#services">Kurumsal Yazılım</a></li>
                         <li><a href="#services">Veri Analitiği</a></li>
-                        <li><a href="#services">Bulut Çözümleri</a></li>
                     </ul>
                 </div>
             </div>
@@ -1395,6 +1335,15 @@
     </footer>
 
     <script>
+        // HAMBURGER MENÜ - Mobil navigasyon kontrolü
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mainNav = document.getElementById('main-nav');
+
+        mobileMenu.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
         // YANLARDAN AKAN KODLAR - Hacker teması için özel efekt
         function generateRandomCode(length) {
             const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789{}[]()<>;:=+-*/%&|^~!?@#$';
@@ -1412,7 +1361,7 @@
                 // Her akış için yeterli uzunlukta kod oluştur
                 const codeLength = 500;
                 let codeContent = '';
-                for (let i = 0; i < 8; i++) { // Daha fazla satır
+                for (let i = 0; i < 8; i++) {
                     codeContent += generateRandomCode(codeLength) + '<br>';
                 }
                 stream.innerHTML = codeContent;
@@ -1441,8 +1390,7 @@
                                                           featureTitle.toLowerCase().includes('mobil') ? 'mobile' :
                                                           featureTitle.toLowerCase().includes('e-ticaret') ? 'ecommerce' :
                                                           featureTitle.toLowerCase().includes('kurumsal') ? 'enterprise' :
-                                                          featureTitle.toLowerCase().includes('veri') ? 'analytics' :
-                                                          featureTitle.toLowerCase().includes('bulut') ? 'cloud' : 'web';
+                                                          featureTitle.toLowerCase().includes('veri') ? 'analytics' : 'web';
             });
         });
 
@@ -1540,6 +1488,13 @@
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
+                
+                // Mobil menüyü kapat
+                if (window.innerWidth <= 768) {
+                    mainNav.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                }
+                
                 document.querySelector(targetId).scrollIntoView({
                     behavior: 'smooth'
                 });
