@@ -6,7 +6,7 @@
     <title>Joseph Software | Profesyonel Yazılım Çözümleri</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Genel Stiller */
+        /* GENEL STİLLER - Tüm sayfa için temel ayarlar */
         * {
             margin: 0;
             padding: 0;
@@ -21,13 +21,13 @@
             position: relative;
         }
 
-        /* Arka plan kod akışı - Daha belirgin */
+        /* YANLARDAN AKAN KODLAR - Hacker teması için özel efekt */
         .code-stream {
             position: fixed;
             top: 0;
             width: 120px;
             height: 100%;
-            color: rgba(0, 200, 255, 0.3);
+            color: rgba(0, 200, 255, 0.4); /* Daha belirgin mavi ton */
             font-size: 16px;
             z-index: -1;
             white-space: nowrap;
@@ -37,7 +37,7 @@
             user-select: none;
             font-family: 'Courier New', monospace;
             font-weight: bold;
-            text-shadow: 0 0 5px rgba(0, 200, 255, 0.5);
+            text-shadow: 0 0 8px rgba(0, 200, 255, 0.6); /* Daha belirgin gölge */
         }
 
         .code-stream.left {
@@ -57,7 +57,7 @@
             }
         }
 
-        /* Header */
+        /* HEADER - Navigasyon ve logo bölümü */
         header {
             background-color: rgba(10, 10, 18, 0.95);
             padding: 20px 0;
@@ -67,6 +67,7 @@
             z-index: 1000;
             border-bottom: 1px solid #2a2a3c;
             backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
         }
 
         .container {
@@ -75,27 +76,29 @@
             margin: 0 auto;
         }
 
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
         .logo {
             font-size: 28px;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 3px;
-            display: inline-block;
             background: linear-gradient(90deg, #00c6ff, #0072ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        nav {
-            float: right;
-        }
-
+        /* NAVİGASYON - Menü öğeleri */
         nav ul {
             list-style: none;
+            display: flex;
         }
 
         nav ul li {
-            display: inline-block;
             margin-left: 30px;
         }
 
@@ -127,7 +130,7 @@
             width: 100%;
         }
 
-        /* Hero Bölümü */
+        /* HERO BÖLÜMÜ - Ana tanıtım alanı */
         .hero {
             height: 100vh;
             display: flex;
@@ -154,7 +157,6 @@
             margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 5px;
-            animation: glitch 3s infinite;
             background: linear-gradient(90deg, #00c6ff, #0072ff, #00c6ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -193,24 +195,6 @@
             box-shadow: 0 8px 25px rgba(0, 114, 255, 0.5);
         }
 
-        @keyframes glitch {
-            0%, 100% {
-                transform: translate(0);
-            }
-            20% {
-                transform: translate(-2px, 2px);
-            }
-            40% {
-                transform: translate(-2px, -2px);
-            }
-            60% {
-                transform: translate(2px, 2px);
-            }
-            80% {
-                transform: translate(2px, -2px);
-            }
-        }
-
         @keyframes gradient {
             0% {
                 background-position: 0% 50%;
@@ -223,12 +207,7 @@
             }
         }
 
-        /* Özellikler Kataloğu */
-        .features {
-            padding: 100px 0;
-            background-color: rgba(15, 15, 25, 0.8);
-        }
-
+        /* BÖLÜM BAŞLIKLARI - Tüm bölümlerde ortak stil */
         .section-title {
             text-align: center;
             font-size: 36px;
@@ -248,6 +227,12 @@
             bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
+        }
+
+        /* ÖZELLİKLER BÖLÜMÜ - Hizmet özellikleri kataloğu */
+        .features {
+            padding: 100px 0;
+            background-color: rgba(15, 15, 25, 0.8);
         }
 
         .features-grid {
@@ -326,7 +311,7 @@
             box-shadow: 0 5px 15px rgba(0, 114, 255, 0.4);
         }
 
-        /* Hizmetler */
+        /* HİZMETLER BÖLÜMÜ - Ana hizmetlerimiz */
         .services {
             padding: 100px 0;
             background-color: rgba(10, 10, 18, 0.8);
@@ -376,15 +361,376 @@
             color: #b0b0c0;
         }
 
-        /* İletişim */
+        /* PROJE GALERİSİ - Yapılan projelerin gösterimi */
+        .portfolio {
+            padding: 100px 0;
+            background-color: rgba(15, 15, 25, 0.8);
+        }
+
+        .portfolio-filter {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid #2a2a3c;
+            color: #b0b0c0;
+            padding: 8px 20px;
+            margin: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 4px;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            color: #0a0a12;
+            border-color: #0072ff;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            height: 250px;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, rgba(0, 10, 20, 0.9));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-overlay h3 {
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-overlay p {
+            color: #b0b0c0;
+            font-size: 14px;
+        }
+
+        /* BLOG BÖLÜMÜ - Yazılım blogu */
+        .blog {
+            padding: 100px 0;
+            background-color: rgba(10, 10, 18, 0.8);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-card {
+            background: linear-gradient(145deg, #1a1a2a, #0f0f1f);
+            border: 1px solid #2a2a3c;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 114, 255, 0.2);
+        }
+
+        .blog-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .blog-card:hover .blog-image img {
+            transform: scale(1.1);
+        }
+
+        .blog-content {
+            padding: 20px;
+        }
+
+        .blog-content h3 {
+            color: #ffffff;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .blog-content p {
+            color: #b0b0c0;
+            margin-bottom: 15px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #707080;
+            font-size: 12px;
+            border-top: 1px solid #2a2a3c;
+            padding-top: 15px;
+        }
+
+        /* TAKIM BÖLÜMÜ - Ekibimizin tanıtımı */
+        .team {
+            padding: 100px 0;
+            background-color: rgba(15, 15, 25, 0.8);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .team-member {
+            text-align: center;
+            background: linear-gradient(145deg, #1a1a2a, #0f0f1f);
+            border: 1px solid #2a2a3c;
+            padding: 30px 20px;
+            border-radius: 8px;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 114, 255, 0.2);
+        }
+
+        .member-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            border: 3px solid #2a2a3c;
+        }
+
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-member h3 {
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .team-member .position {
+            color: #00c6ff;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .team-member p {
+            color: #b0b0c0;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .member-social {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .member-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            background: #2a2a3c;
+            color: #b0b0c0;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .member-social a:hover {
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            color: #0a0a12;
+        }
+
+        /* İSTATİSTİKLER BÖLÜMÜ - Başarı istatistikleri */
+        .stats {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0a0a12, #1a1a2a);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: bold;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .stat-text {
+            color: #b0b0c0;
+            font-size: 18px;
+        }
+
+        /* SIKÇA SORULAN SORULAR - FAQ bölümü */
+        .faq {
+            padding: 100px 0;
+            background-color: rgba(10, 10, 18, 0.8);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #2a2a3c;
+            border-radius: 8px;
+            overflow: hidden;
+            background: linear-gradient(145deg, #1a1a2a, #0f0f1f);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+            color: #b0b0c0;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        /* İLETİŞİM BÖLÜMÜ - Form ve iletişim bilgileri */
         .contact {
             padding: 100px 0;
             background-color: rgba(15, 15, 25, 0.8);
         }
 
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0a0a12;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .contact-details h3 {
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .contact-details p {
+            color: #b0b0c0;
+        }
+
         .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
+            background: linear-gradient(145deg, #1a1a2a, #0f0f1f);
+            border: 1px solid #2a2a3c;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
         .form-group {
@@ -432,7 +778,7 @@
             background-size: 16px;
         }
 
-        /* Footer */
+        /* FOOTER - Alt bilgi ve sosyal medya bağlantıları */
         footer {
             background-color: #05050a;
             padding: 50px 0 20px;
@@ -521,16 +867,19 @@
             color: #b0b0c0;
         }
 
-        /* Responsive Tasarım */
+        /* RESPONSIVE TASARIM - Mobil cihazlar için uyumluluk */
         @media (max-width: 768px) {
-            nav {
-                float: none;
-                margin-top: 20px;
+            .header-container {
+                flex-direction: column;
                 text-align: center;
             }
             
+            nav ul {
+                flex-direction: column;
+                margin-top: 20px;
+            }
+            
             nav ul li {
-                display: block;
                 margin: 10px 0;
             }
             
@@ -543,7 +892,15 @@
             }
             
             .features-grid,
-            .services-grid {
+            .services-grid,
+            .portfolio-grid,
+            .blog-grid,
+            .team-grid,
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-container {
                 grid-template-columns: 1fr;
             }
             
@@ -560,26 +917,29 @@
     </style>
 </head>
 <body>
-    <!-- Yanlardan akan kodlar - Daha belirgin -->
+    <!-- YANLARDAN AKAN KODLAR - Hacker teması için özel efekt -->
     <div class="code-stream left"></div>
     <div class="code-stream right"></div>
 
-    <!-- Header -->
+    <!-- HEADER - Navigasyon ve logo bölümü -->
     <header>
-        <div class="container">
+        <div class="container header-container">
             <div class="logo">Joseph Software</div>
             <nav>
                 <ul>
                     <li><a href="#home">Ana Sayfa</a></li>
                     <li><a href="#features">Özellikler</a></li>
                     <li><a href="#services">Hizmetler</a></li>
+                    <li><a href="#portfolio">Projeler</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#team">Takım</a></li>
                     <li><a href="#contact">İletişim</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Bölümü -->
+    <!-- HERO BÖLÜMÜ - Ana tanıtım alanı -->
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>Joseph Software</h1>
@@ -588,7 +948,7 @@
         </div>
     </section>
 
-    <!-- Özellikler Kataloğu -->
+    <!-- ÖZELLİKLER BÖLÜMÜ - Hizmet özellikleri kataloğu -->
     <section class="features" id="features">
         <div class="container">
             <h2 class="section-title">Yazılım Özellikleri Kataloğu</h2>
@@ -644,7 +1004,7 @@
         </div>
     </section>
 
-    <!-- Hizmetler -->
+    <!-- HİZMETLER BÖLÜMÜ - Ana hizmetlerimiz -->
     <section class="services" id="services">
         <div class="container">
             <h2 class="section-title">Hizmetlerimiz</h2>
@@ -676,44 +1036,320 @@
         </div>
     </section>
 
-    <!-- İletişim -->
-    <section class="contact" id="contact">
+    <!-- PROJE GALERİSİ - Yapılan projelerin gösterimi -->
+    <section class="portfolio" id="portfolio">
         <div class="container">
-            <h2 class="section-title">İletişim</h2>
-            <div class="contact-form">
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Adınız</label>
-                        <input type="text" id="name" name="name" required>
+            <h2 class="section-title">Projelerimiz</h2>
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">Tümü</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="mobile">Mobil</button>
+                <button class="filter-btn" data-filter="ecommerce">E-Ticaret</button>
+            </div>
+            <div class="portfolio-grid">
+                <!-- Proje 1 -->
+                <div class="portfolio-item" data-category="web">
+                    <img src="https://placehold.co/600x400/1a1a2a/00c6ff?text=Web+Projesi+1" alt="Web Projesi 1">
+                    <div class="portfolio-overlay">
+                        <h3>Kurumsal Web Sitesi</h3>
+                        <p>Modern tasarım ve responsive yapı</p>
                     </div>
-                    <div class="form-group">
-                        <label for="email">E-posta</label>
-                        <input type="email" id="email" name="email" required>
+                </div>
+                
+                <!-- Proje 2 -->
+                <div class="portfolio-item" data-category="mobile">
+                    <img src="https://placehold.co/600x400/1a1a2a/0072ff?text=Mobil+Uygulama+1" alt="Mobil Uygulama 1">
+                    <div class="portfolio-overlay">
+                        <h3>Mobil Uygulama</h3>
+                        <p>iOS ve Android için native uygulama</p>
                     </div>
-                    <div class="form-group">
-                        <label for="service">İlginizi Çeken Hizmet</label>
-                        <select id="service" name="service">
-                            <option value="web">Web Geliştirme</option>
-                            <option value="mobile">Mobil Uygulama</option>
-                            <option value="ecommerce">E-Ticaret</option>
-                            <option value="enterprise">Kurumsal Yazılım</option>
-                            <option value="analytics">Veri Analitiği</option>
-                            <option value="cloud">Bulut Çözümleri</option>
-                            <option value="consulting">Danışmanlık</option>
-                            <option value="support">Destek & Bakım</option>
-                        </select>
+                </div>
+                
+                <!-- Proje 3 -->
+                <div class="portfolio-item" data-category="ecommerce">
+                    <img src="https://placehold.co/600x400/1a1a2a/00c6ff?text=E-Ticaret+Sitesi" alt="E-Ticaret Sitesi">
+                    <div class="portfolio-overlay">
+                        <h3>E-Ticaret Platformu</h3>
+                        <p>Güvenli alışveriş deneyimi</p>
                     </div>
-                    <div class="form-group">
-                        <label for="message">Mesajınız</label>
-                        <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <!-- Proje 4 -->
+                <div class="portfolio-item" data-category="web">
+                    <img src="https://placehold.co/600x400/1a1a2a/0072ff?text=Web+Projesi+2" alt="Web Projesi 2">
+                    <div class="portfolio-overlay">
+                        <h3>Kurumsal Portal</h3>
+                        <p>İş süreçleri yönetim sistemi</p>
                     </div>
-                    <button type="submit" class="btn" style="width: 100%;">Gönder</button>
-                </form>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- BLOG BÖLÜMÜ - Yazılım blogu -->
+    <section class="blog" id="blog">
+        <div class="container">
+            <h2 class="section-title">Blog</h2>
+            <div class="blog-grid">
+                <!-- Blog 1 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://placehold.co/600x400/1a1a2a/00c6ff?text=Yapay+Zeka" alt="Yapay Zeka">
+                    </div>
+                    <div class="blog-content">
+                        <h3>Yapay Zeka ve Yazılım Geliştirme</h3>
+                        <p>Yapay zeka teknolojilerinin yazılım geliştirme süreçlerine entegrasyonu ve sağladığı faydalar.</p>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 15 Haziran 2023</span>
+                            <span><i class="far fa-user"></i> Joseph Software</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Blog 2 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://placehold.co/600x400/1a1a2a/0072ff?text=Güvenlik" alt="Güvenlik">
+                    </div>
+                    <div class="blog-content">
+                        <h3>Web Uygulama Güvenliği</h3>
+                        <p>Modern web uygulamalarında güvenlik açıkları ve korunma yöntemleri hakkında kapsamlı rehber.</p>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 2 Temmuz 2023</span>
+                            <span><i class="far fa-user"></i> Joseph Software</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Blog 3 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://placehold.co/600x400/1a1a2a/00c6ff?text=Bulut+Bilişim" alt="Bulut Bilişim">
+                    </div>
+                    <div class="blog-content">
+                        <h3>Bulut Bilişimin Geleceği</h3>
+                        <p>Bulut teknolojilerinin iş dünyasına etkileri ve gelecekteki trendler hakkında analiz.</p>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 20 Ağustos 2023</span>
+                            <span><i class="far fa-user"></i> Joseph Software</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TAKIM BÖLÜMÜ - Ekibimizin tanıtımı -->
+    <section class="team" id="team">
+        <div class="container">
+            <h2 class="section-title">Takımımız</h2>
+            <div class="team-grid">
+                <!-- Takım Üyesi 1 -->
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://placehold.co/150x150/1a1a2a/00c6ff?text=JS" alt="Joseph Software">
+                    </div>
+                    <h3>Joseph Software</h3>
+                    <div class="position">Kurucu & CEO</div>
+                    <p>10 yılı aşkın yazılım geliştirme deneyimi ile profesyonel çözümler sunuyor.</p>
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Takım Üyesi 2 -->
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://placehold.co/150x150/1a1a2a/0072ff?text=AS" alt="Ahmet Selim">
+                    </div>
+                    <h3>Ahmet Selim</h3>
+                    <div class="position">Full Stack Developer</div>
+                    <p>Web ve mobil uygulama geliştirme konusunda uzmanlaşmış deneyimli yazılımcı.</p>
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Takım Üyesi 3 -->
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://placehold.co/150x150/1a1a2a/00c6ff?text=EY" alt="Elif Yılmaz">
+                    </div>
+                    <h3>Elif Yılmaz</h3>
+                    <div class="position">UI/UX Designer</div>
+                    <p>Kullanıcı deneyimi odaklı modern ve şık arayüz tasarımları konusunda uzman.</p>
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Takım Üyesi 4 -->
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://placehold.co/150x150/1a1a2a/0072ff?text=MK" alt="Mehmet Kaya">
+                    </div>
+                    <h3>Mehmet Kaya</h3>
+                    <div class="position">DevOps Engineer</div>
+                    <p>Bulut altyapıları ve sürekli entegrasyon/deploy süreçleri konusunda uzman.</p>
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- İSTATİSTİKLER BÖLÜMÜ - Başarı istatistikleri -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="150">0</div>
+                    <div class="stat-text">Tamamlanan Proje</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="50">0</div>
+                    <div class="stat-text">Mutlu Müşteri</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="5">0</div>
+                    <div class="stat-text">Yıl Deneyim</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="24">0</div>
+                    <div class="stat-text">7/24 Destek</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SIKÇA SORULAN SORULAR - FAQ bölümü -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Sıkça Sorulan Sorular</h2>
+            <div class="faq-container">
+                <!-- Soru 1 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Web sitesi yaptırmak ne kadar sürer?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Web sitesi yapım süresi projenin karmaşıklığına ve boyutuna göre değişiklik gösterir. Basit bir kurumsal web sitesi 2-4 hafta içerisinde tamamlanabilirken, daha karmaşık e-ticaret sistemleri 2-3 ay sürebilir.</p>
+                    </div>
+                </div>
+                
+                <!-- Soru 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Mobil uygulama geliştirme maliyeti nedir?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Mobil uygulama geliştirme maliyeti, uygulamanın özelliklerine, platform seçimine (iOS, Android veya her ikisi) ve tasarım karmaşıklığına bağlı olarak değişir. Detaylı bir teklif için lütfen iletişime geçin.</p>
+                    </div>
+                </div>
+                
+                <!-- Soru 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Yazılım geliştirme sonrası destek sağlıyor musunuz?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Evet, tüm projelerimizde geliştirme sonrası destek ve bakım hizmeti sunuyoruz. İsteğe bağlı olarak aylık/yıllık bakım paketlerimiz mevcuttur.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- İLETİŞİM BÖLÜMÜ - Form ve iletişim bilgileri -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">İletişim</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Adres</h3>
+                            <p>Teknopark İstanbul, Sanayi Mah.<br>İstanbul, Türkiye</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Telefon</h3>
+                            <p>+90 123 456 78 90</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>E-posta</h3>
+                            <p>info@josephsoftware.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Çalışma Saatleri</h3>
+                            <p>Pazartesi - Cuma: 09:00 - 18:00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Adınız</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-posta</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">İlginizi Çeken Hizmet</label>
+                            <select id="service" name="service">
+                                <option value="web">Web Geliştirme</option>
+                                <option value="mobile">Mobil Uygulama</option>
+                                <option value="ecommerce">E-Ticaret</option>
+                                <option value="enterprise">Kurumsal Yazılım</option>
+                                <option value="analytics">Veri Analitiği</option>
+                                <option value="cloud">Bulut Çözümleri</option>
+                                <option value="consulting">Danışmanlık</option>
+                                <option value="support">Destek & Bakım</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mesajınız</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;">Gönder</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER - Alt bilgi ve sosyal medya bağlantıları -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -721,6 +1357,7 @@
                     <h3>Joseph Software</h3>
                     <p>Profesyonel yazılım çözümleri ile işletmenizin dijital dönüşümüne liderlik ediyoruz.</p>
                     <div class="social-icons">
+                        <a href="https://www.instagram.com/01_joseph_10/" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -733,14 +1370,22 @@
                         <li><a href="#home">Ana Sayfa</a></li>
                         <li><a href="#features">Özellikler</a></li>
                         <li><a href="#services">Hizmetler</a></li>
+                        <li><a href="#portfolio">Projeler</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#team">Takım</a></li>
                         <li><a href="#contact">İletişim</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>İletişim Bilgileri</h3>
-                    <p><i class="fas fa-envelope"></i> info@josephsoftware.com</p>
-                    <p><i class="fas fa-phone"></i> +90 123 456 78 90</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Teknopark İstanbul, Sanayi Mah.</p>
+                    <h3>Hizmetlerimiz</h3>
+                    <ul>
+                        <li><a href="#services">Web Geliştirme</a></li>
+                        <li><a href="#services">Mobil Uygulama</a></li>
+                        <li><a href="#services">E-Ticaret</a></li>
+                        <li><a href="#services">Kurumsal Yazılım</a></li>
+                        <li><a href="#services">Veri Analitiği</a></li>
+                        <li><a href="#services">Bulut Çözümleri</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="copyright">
@@ -750,7 +1395,7 @@
     </footer>
 
     <script>
-        // Yanlardan akan kodlar için rastgele karakterler oluşturma
+        // YANLARDAN AKAN KODLAR - Hacker teması için özel efekt
         function generateRandomCode(length) {
             const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789{}[]()<>;:=+-*/%&|^~!?@#$';
             let result = '';
@@ -778,7 +1423,7 @@
             });
         }
 
-        // Özellik seçme butonlarına tıklama olayı
+        // ÖZELLİK SEÇME BUTONLARI - Kullanıcı tercihlerini kaydetme
         document.querySelectorAll('.feature-select').forEach(button => {
             button.addEventListener('click', function() {
                 const featureTitle = this.parentElement.querySelector('h3').textContent;
@@ -801,7 +1446,59 @@
             });
         });
 
-        // Bildirim gösterme fonksiyonu
+        // PROJE FİLTRELEME - Portfolio bölümü için filtreleme işlevi
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Tüm butonlardan active classını kaldır
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Tıklanan butona active classını ekle
+                this.classList.add('active');
+                
+                const filter = this.getAttribute('data-filter');
+                const portfolioItems = document.querySelectorAll('.portfolio-item');
+                
+                portfolioItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // FAQ BÖLÜMÜ - Sıkça sorulan soruların açılıp kapanması
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const faqItem = this.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        // İSTATİSTİKLER BÖLÜMÜ - Sayıların artış animasyonu
+        function animateStats() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-count'));
+                const duration = 2000; // 2 saniye
+                const step = target / (duration / 16); // 60 FPS
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    stat.textContent = Math.floor(current);
+                }, 16);
+            });
+        }
+
+        // BİLDİRİM GÖSTERME - Kullanıcıya geri bildirim sağlama
         function showNotification(message) {
             const notification = document.createElement('div');
             notification.style.position = 'fixed';
@@ -823,17 +1520,22 @@
             }, 3000);
         }
 
-        // Form gönderimi
+        // FORM GÖNDERİMİ - İletişim formu işleme
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             showNotification('Mesajınız başarıyla gönderildi. En kısa sürede sizinle iletişime geçeceğiz.');
             this.reset();
         });
 
-        // Sayfa yüklendiğinde kod akışını başlat
-        window.addEventListener('load', initCodeStream);
+        // SAYFA YÜKLENDİĞİNDE - Tüm işlevleri başlatma
+        window.addEventListener('load', function() {
+            initCodeStream();
+            
+            // İstatistik animasyonunu başlat (sayfa yüklendikten sonra)
+            setTimeout(animateStats, 500);
+        });
 
-        // Düzgün kaydırma için navigasyon bağlantıları
+        // DÜZGÜN KAYDIRMA - Navigasyon bağlantıları için smooth scroll
         document.querySelectorAll('nav a, .btn[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -844,13 +1546,27 @@
             });
         });
 
-        // Scroll olayı ile header'a gölge ekleme
+        // SCROLL OLAYI - Header'a gölge ekleme ve sticky özelliği
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
             if (window.scrollY > 50) {
                 header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.3)';
+                header.style.padding = '15px 0';
             } else {
                 header.style.boxShadow = 'none';
+                header.style.padding = '20px 0';
+            }
+            
+            // İstatistikleri görünür alana geldiğinde tetikle
+            const statsSection = document.querySelector('.stats');
+            const statsPosition = statsSection.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.3;
+            
+            if (statsPosition < screenPosition) {
+                const statNumbers = document.querySelectorAll('.stat-number');
+                if (statNumbers[0].textContent === '0') {
+                    animateStats();
+                }
             }
         });
     </script>
