@@ -82,24 +82,79 @@
             align-items: center;
         }
 
+        /* KİŞİSEL LOGO - Joseph Software'i temsil eden özel tasarım */
         .logo {
             display: flex;
             align-items: center;
-            font-size: 28px;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 3px;
-            background: linear-gradient(90deg, #00c6ff, #0072ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
 
         .logo-icon {
-            margin-right: 10px;
-            font-size: 32px;
+            position: relative;
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 114, 255, 0.3);
+        }
+
+        .logo-icon::before {
+            content: 'J';
+            font-size: 28px;
+            font-weight: bold;
+            color: #0a0a12;
+            z-index: 2;
+        }
+
+        .logo-icon::after {
+            content: 'S';
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #0a0a12;
+            opacity: 0.7;
+            z-index: 2;
+        }
+
+        .logo-icon .code-effect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(255, 255, 255, 0.1) 2px,
+                rgba(255, 255, 255, 0.1) 4px
+            );
+            animation: scan 3s linear infinite;
+        }
+
+        @keyframes scan {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(100%);
+            }
+        }
+
+        .logo-text {
             background: linear-gradient(90deg, #00c6ff, #0072ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            font-size: 24px;
         }
 
         /* HAMBURGER MENÜ - Mobil navigasyon */
@@ -263,6 +318,82 @@
             bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
+        }
+
+        /* MODAL - Instagram DM gönderimi için */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: linear-gradient(145deg, #1a1a2a, #0f0f1f);
+            border: 1px solid #2a2a3c;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .modal-header h2 {
+            color: #ffffff;
+            font-size: 24px;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            color: #b0b0c0;
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close-modal:hover {
+            color: #ffffff;
+        }
+
+        .modal-body {
+            margin-bottom: 20px;
+        }
+
+        .modal-body p {
+            color: #b0b0c0;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .message-preview {
+            background-color: rgba(30, 30, 40, 0.8);
+            border: 1px solid #2a2a3c;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
         }
 
         /* ÖZELLİKLER BÖLÜMÜ - Hizmet özellikleri kataloğu */
@@ -948,12 +1079,39 @@
     <div class="code-stream left"></div>
     <div class="code-stream right"></div>
 
+    <!-- MODAL - Instagram DM gönderimi için -->
+    <div class="modal" id="instagramModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Instagram DM Gönder</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Mesajınız hazır! Aşağıdaki butona tıklayarak Instagram'a gidebilir ve mesajınızı doğrudan bize gönderebilirsiniz.</p>
+                <div class="message-preview" id="messagePreview"></div>
+                <p><strong>Adımlar:</strong></p>
+                <ol>
+                    <li>"Instagram'a Git" butonuna tıklayın</li>
+                    <li>Instagram'da "Mesaj Gönder" butonuna tıklayın</li>
+                    <li>Hazırlanan mesajı kopyalayıp yapıştırın</li>
+                    <li>Mesajınızı gönderin</li>
+                </ol>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" id="copyMessage">Mesajı Kopyala</button>
+                <a href="https://www.instagram.com/direct/inbox/" target="_blank" class="btn" id="goToInstagram">Instagram'a Git</a>
+            </div>
+        </div>
+    </div>
+
     <!-- HEADER - Navigasyon ve logo bölümü -->
     <header>
         <div class="container header-container">
             <div class="logo">
-                <i class="fas fa-code logo-icon"></i>
-                Joseph Software
+                <div class="logo-icon">
+                    <div class="code-effect"></div>
+                </div>
+                <div class="logo-text">Joseph Software</div>
             </div>
             <div class="menu-toggle" id="mobile-menu">
                 <span></span>
@@ -1286,7 +1444,7 @@
                             <label for="message">Mesajınız</label>
                             <textarea id="message" name="message" required></textarea>
                         </div>
-                        <button type="submit" class="btn" style="width: 100%;">Gönder</button>
+                        <button type="submit" class="btn" style="width: 100%;">Instagram DM ile Gönder</button>
                     </form>
                 </div>
             </div>
@@ -1376,6 +1534,40 @@
             });
         }
 
+        // MODAL İŞLEMLERİ - Instagram DM gönderimi için
+        const modal = document.getElementById('instagramModal');
+        const closeModal = document.querySelector('.close-modal');
+        const copyMessageBtn = document.getElementById('copyMessage');
+        const goToInstagramBtn = document.getElementById('goToInstagram');
+        const messagePreview = document.getElementById('messagePreview');
+
+        // Modal'ı kapatma
+        closeModal.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        // Dışarı tıklayınca modal'ı kapatma
+        window.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Mesajı kopyalama
+        copyMessageBtn.addEventListener('click', function() {
+            const textToCopy = messagePreview.textContent;
+            navigator.clipboard.writeText(textToCopy).then(function() {
+                // Kopyalama başarılı olduğunda buton metnini değiştir
+                const originalText = copyMessageBtn.textContent;
+                copyMessageBtn.textContent = 'Kopyalandı!';
+                setTimeout(function() {
+                    copyMessageBtn.textContent = originalText;
+                }, 2000);
+            }).catch(function(err) {
+                console.error('Kopyalama hatası: ', err);
+            });
+        });
+
         // ÖZELLİK SEÇME BUTONLARI - Kullanıcı tercihlerini kaydetme
         document.querySelectorAll('.feature-select').forEach(button => {
             button.addEventListener('click', function() {
@@ -1388,12 +1580,6 @@
                 
                 // Toast benzeri bildirim
                 showNotification(`"${featureTitle}" özelliği listenize eklendi.`);
-                
-                // İsteğe bağlı: Forma yönlendirme
-                document.getElementById('service').value = featureTitle.toLowerCase().includes('web') ? 'web' : 
-                                                          featureTitle.toLowerCase().includes('e-ticaret') ? 'ecommerce' :
-                                                          featureTitle.toLowerCase().includes('kurumsal') ? 'enterprise' :
-                                                          featureTitle.toLowerCase().includes('veri') ? 'analytics' : 'web';
             });
         });
 
@@ -1471,10 +1657,42 @@
             }, 3000);
         }
 
-        // FORM GÖNDERİMİ - İletişim formu işleme
+        // FORM GÖNDERİMİ - İletişim formu işleme (Instagram DM)
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            showNotification('Mesajınız başarıyla gönderildi. En kısa sürede Instagram üzerinden sizinle iletişime geçeceğiz.');
+            
+            // Form verilerini al
+            const name = document.getElementById('name').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            // Instagram DM için mesajı hazırla
+            const serviceTexts = {
+                'web': 'Web Geliştirme',
+                'ecommerce': 'E-Ticaret',
+                'enterprise': 'Kurumsal Yazılım',
+                'analytics': 'Veri Analitiği',
+                'consulting': 'Danışmanlık',
+                'support': 'Destek & Bakım'
+            };
+            
+            const instagramMessage = `Merhaba Joseph Software!
+
+Ben: ${name}
+İlgilendiğim hizmet: ${serviceTexts[service]}
+
+Mesajım:
+${message}
+
+Teşekkürler!`;
+            
+            // Mesajı modal'da göster
+            messagePreview.textContent = instagramMessage;
+            
+            // Modal'ı göster
+            modal.style.display = 'flex';
+            
+            // Formu sıfırla
             this.reset();
         });
 
