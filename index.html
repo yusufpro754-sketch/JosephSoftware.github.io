@@ -60,7 +60,7 @@
         /* HEADER - Navigasyon ve logo bölümü */
         header {
             background-color: rgba(10, 10, 18, 0.95);
-            padding: 20px 0;
+            padding: 15px 0;
             position: fixed;
             width: 100%;
             top: 0;
@@ -80,6 +80,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
         }
 
         /* KİŞİSEL LOGO - Joseph Software'i temsil eden özel tasarım */
@@ -89,13 +90,14 @@
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 3px;
+            z-index: 1001;
         }
 
         .logo-icon {
             position: relative;
-            width: 50px;
-            height: 50px;
-            margin-right: 15px;
+            width: 45px;
+            height: 45px;
+            margin-right: 12px;
             background: linear-gradient(135deg, #00c6ff, #0072ff);
             border-radius: 10px;
             display: flex;
@@ -107,7 +109,7 @@
 
         .logo-icon::before {
             content: 'J';
-            font-size: 28px;
+            font-size: 24px;
             font-weight: bold;
             color: #0a0a12;
             z-index: 2;
@@ -118,7 +120,7 @@
             position: absolute;
             bottom: 5px;
             right: 5px;
-            font-size: 14px;
+            font-size: 12px;
             font-weight: bold;
             color: #0a0a12;
             opacity: 0.7;
@@ -154,7 +156,7 @@
             background: linear-gradient(90deg, #00c6ff, #0072ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            font-size: 24px;
+            font-size: 22px;
         }
 
         /* HAMBURGER MENÜ - Mobil navigasyon */
@@ -165,6 +167,8 @@
             width: 30px;
             height: 25px;
             justify-content: space-between;
+            z-index: 1001;
+            position: relative;
         }
 
         .menu-toggle span {
@@ -212,6 +216,24 @@
 
         nav ul li a:hover::after {
             width: 100%;
+        }
+
+        /* SİTE GÖRÜNTÜLENME SAYACI */
+        .view-counter {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            color: #0a0a12;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0, 114, 255, 0.3);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         /* HERO BÖLÜMÜ - Ana tanıtım alanı */
@@ -1013,21 +1035,23 @@
         /* RESPONSIVE TASARIM - Mobil cihazlar için uyumluluk */
         @media (max-width: 768px) {
             .header-container {
-                flex-direction: column;
-                text-align: center;
+                flex-direction: row;
+                justify-content: space-between;
             }
             
             .menu-toggle {
                 display: flex;
-                position: absolute;
-                top: 25px;
-                right: 20px;
             }
             
             nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
                 width: 100%;
+                background-color: rgba(10, 10, 18, 0.95);
                 display: none;
-                margin-top: 20px;
+                padding: 20px 0;
+                border-top: 1px solid #2a2a3c;
             }
             
             nav.active {
@@ -1036,6 +1060,7 @@
             
             nav ul {
                 flex-direction: column;
+                align-items: center;
             }
             
             nav ul li {
@@ -1071,6 +1096,13 @@
                 left: 50%;
                 transform: translateX(-50%);
             }
+            
+            .view-counter {
+                bottom: 10px;
+                right: 10px;
+                font-size: 12px;
+                padding: 6px 12px;
+            }
         }
     </style>
 </head>
@@ -1078,6 +1110,12 @@
     <!-- YANLARDAN AKAN KODLAR - Hacker teması için özel efekt -->
     <div class="code-stream left"></div>
     <div class="code-stream right"></div>
+
+    <!-- SİTE GÖRÜNTÜLENME SAYACI -->
+    <div class="view-counter">
+        <i class="fas fa-eye"></i>
+        <span id="viewCount">0</span> Görüntülenme
+    </div>
 
     <!-- MODAL - Instagram DM gönderimi için -->
     <div class="modal" id="instagramModal">
@@ -1327,12 +1365,12 @@
                     <div class="stat-text">Mutlu Müşteri</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number" data-count="5">0</div>
+                    <div class="stat-number">2+</div>
                     <div class="stat-text">Yıl Deneyim</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number" data-count="24">0</div>
-                    <div class="stat-text">7/24 Destek</div>
+                    <div class="stat-number">10+</div>
+                    <div class="stat-text">Çalışan Kişi</div>
                 </div>
             </div>
         </div>
@@ -1350,7 +1388,7 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Web sitesi yapım süresi projenin karmaşıklığına ve boyutuna göre değişiklik gösterir. Basit bir kurumsal web sitesi 2-4 hafta içerisinde tamamlanabilirken, daha karmaşık e-ticaret sistemleri 2-3 ay sürebilir.</p>
+                        <p>Web sitesi yapım süresi projenin karmaşıklığına ve boyutuna göre değişiklik gösterir. Basit bir kurumsal web sitesi birkaç hafta içerisinde tamamlanabilirken, daha karmaşık e-ticaret sistemleri daha uzun sürebilir. Size özel süreç için bizimle iletişime geçebilirsiniz.</p>
                     </div>
                 </div>
                 
@@ -1361,7 +1399,7 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Yazılım geliştirme maliyeti, projenin özelliklerine, karmaşıklığına ve süresine bağlı olarak değişir. Detaylı bir teklif için lütfen Instagram üzerinden bizimle iletişime geçin.</p>
+                        <p>Yazılım geliştirme maliyeti, projenin özelliklerine, karmaşıklığına ve süresine bağlı olarak değişir. Her proje için özel teklif hazırlıyoruz. Detaylı bir teklif için lütfen Instagram üzerinden bizimle iletişime geçin.</p>
                     </div>
                 </div>
                 
@@ -1372,7 +1410,51 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Evet, tüm projelerimizde geliştirme sonrası destek ve bakım hizmeti sunuyoruz. İsteğe bağlı olarak aylık/yıllık bakım paketlerimiz mevcuttur.</p>
+                        <p>Evet, tüm projelerimizde geliştirme sonrası destek ve bakım hizmeti sunuyoruz. İsteğe bağlı olarak aylık/yıllık bakım paketlerimiz mevcuttur. Destek hizmetlerimiz hakkında detaylı bilgi almak için bizimle iletişime geçebilirsiniz.</p>
+                    </div>
+                </div>
+                
+                <!-- Soru 4 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Hangi programlama dilleri ve teknolojileri kullanıyorsunuz?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Modern ve güvenilir teknolojiler kullanıyoruz. Web geliştirme için HTML5, CSS3, JavaScript, React, Vue.js, Node.js; backend için Python, PHP, Java; veritabanı olarak MySQL, PostgreSQL, MongoDB gibi teknolojileri tercih ediyoruz. Projenizin ihtiyaçlarına göre en uygun teknoloji stack'ini belirliyoruz.</p>
+                    </div>
+                </div>
+                
+                <!-- Soru 5 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Proje tesliminden sonra değişiklik yapabilir miyim?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Evet, proje tesliminden sonra da değişiklik ve güncelleme yapabilirsiniz. Küçük değişiklikler için ücretsiz destek sağlıyoruz, büyük değişiklikler için ise ek ücretlendirme yapıyoruz. Değişiklik politikamız hakkında detaylı bilgi için bizimle iletişime geçebilirsiniz.</p>
+                    </div>
+                </div>
+                
+                <!-- Soru 6 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>SEO uyumlu web sitesi geliştiriyor musunuz?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Evet, tüm web sitelerimizi SEO uyumlu olarak geliştiriyoruz. Arama motorlarında üst sıralarda çıkmanızı sağlayacak teknik altyapıyı kuruyor, içerik optimizasyonu konusunda da danışmanlık sağlıyoruz. SEO performansınızı düzenli olarak takip edip iyileştirme önerileri sunuyoruz.</p>
+                    </div>
+                </div>
+                
+                <!-- Soru 7 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Mobil uyumlu (responsive) tasarım yapıyor musunuz?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Evet, tüm web sitelerimizi mobil uyumlu (responsive) olarak geliştiriyoruz. Bu sayede web siteniz tablet ve cep telefonları dahil tüm cihazlarda sorunsuz çalışır ve kullanıcı deneyimi her cihazda optimize edilmiş olur.</p>
                     </div>
                 </div>
             </div>
@@ -1493,6 +1575,18 @@
     </footer>
 
     <script>
+        // SİTE GÖRÜNTÜLENME SAYACI
+        function updateViewCount() {
+            let views = localStorage.getItem('siteViews');
+            if (views) {
+                views = parseInt(views) + 1;
+            } else {
+                views = 1;
+            }
+            localStorage.setItem('siteViews', views);
+            document.getElementById('viewCount').textContent = views.toLocaleString();
+        }
+
         // HAMBURGER MENÜ - Mobil navigasyon kontrolü
         const mobileMenu = document.getElementById('mobile-menu');
         const mainNav = document.getElementById('main-nav');
@@ -1619,6 +1713,9 @@
         function animateStats() {
             const statNumbers = document.querySelectorAll('.stat-number');
             statNumbers.forEach(stat => {
+                const targetText = stat.textContent;
+                if (targetText.includes('+')) return; // "+" içerenleri atla
+                
                 const target = parseInt(stat.getAttribute('data-count'));
                 const duration = 2000; // 2 saniye
                 const step = target / (duration / 16); // 60 FPS
@@ -1699,6 +1796,7 @@ Teşekkürler!`;
         // SAYFA YÜKLENDİĞİNDE - Tüm işlevleri başlatma
         window.addEventListener('load', function() {
             initCodeStream();
+            updateViewCount();
             
             // İstatistik animasyonunu başlat (sayfa yüklendikten sonra)
             setTimeout(animateStats, 500);
@@ -1727,10 +1825,10 @@ Teşekkürler!`;
             const header = document.querySelector('header');
             if (window.scrollY > 50) {
                 header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.3)';
-                header.style.padding = '15px 0';
+                header.style.padding = '10px 0';
             } else {
                 header.style.boxShadow = 'none';
-                header.style.padding = '20px 0';
+                header.style.padding = '15px 0';
             }
             
             // İstatistikleri görünür alana geldiğinde tetikle
