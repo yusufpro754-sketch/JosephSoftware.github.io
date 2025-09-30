@@ -1546,13 +1546,13 @@
     </footer>
 
     <script>
-        // SİTE GÖRÜNTÜLENME SAYACI (KALDIĞI YERDEN DEVAM)
+        // SİTE GÖRÜNTÜLENME SAYACI (+300 EKLENDİ)
         function updateViewCount() {
             let views = localStorage.getItem('siteViews');
             if (views) {
                 views = parseInt(views) + 1; // Her sayfa yüklemede 1 artış
             } else {
-                views = 1; // İlk defa girildiğinde 1'den başla
+                views = 301; // İlk defa girildiğinde 301'den başla (300 + 1)
             }
             localStorage.setItem('siteViews', views);
             document.getElementById('viewCount').textContent = views.toLocaleString();
