@@ -1548,6 +1548,12 @@
     <script>
         // SİTE GÖRÜNTÜLENME SAYACI (1'den başlayıp her ziyarette 1 artar)
         function updateViewCount() {
+            // Önce localStorage'ı temizleyelim (sadece bu seferlik)
+            if (!localStorage.getItem('counterReset')) {
+                localStorage.removeItem('siteViews');
+                localStorage.setItem('counterReset', 'true');
+            }
+            
             let views = localStorage.getItem('siteViews');
             if (views) {
                 views = parseInt(views) + 1;
