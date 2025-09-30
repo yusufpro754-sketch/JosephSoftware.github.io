@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joseph Software | Profesyonel Yazılım Çözümleri</title>
+    <title>Josephware | Profesyonel Yazılım Çözümleri</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* GENEL STİLLER - Tüm sayfa için temel ayarlar */
@@ -15,19 +15,19 @@
         }
 
         body {
-            background-color: #0a0a12;
-            color: #e0e0e0;
+            background-color: #1a1a2a; /* DAHA AÇIK TEMA */
+            color: #f0f0f0; /* DAHA AÇIK METİN */
             overflow-x: hidden;
             position: relative;
         }
 
-        /* YANLARDAN AKAN KODLAR - Hacker teması için özel efekt (PARLAKLIK ARTIRILDI) */
+        /* YANLARDAN AKAN KODLAR - Hacker teması için özel efekt */
         .code-stream {
             position: fixed;
             top: 0;
             width: 120px;
             height: 100%;
-            color: rgba(0, 230, 255, 0.7); /* Daha parlak mavi */
+            color: rgba(100, 200, 255, 0.6); /* DAHA AÇIK MAVİ */
             font-size: 16px;
             z-index: -1;
             white-space: nowrap;
@@ -37,7 +37,7 @@
             user-select: none;
             font-family: 'Courier New', monospace;
             font-weight: bold;
-            text-shadow: 0 0 15px rgba(0, 230, 255, 0.8); /* Daha belirgin parlaklık */
+            text-shadow: 0 0 12px rgba(100, 200, 255, 0.7);
         }
 
         .code-stream.left {
@@ -59,13 +59,13 @@
 
         /* HEADER - Navigasyon ve logo bölümü */
         header {
-            background-color: rgba(10, 10, 18, 0.95);
+            background-color: rgba(26, 26, 42, 0.95); /* DAHA AÇIK */
             padding: 15px 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid #2a2a3c;
+            border-bottom: 1px solid #3a3a4c; /* DAHA AÇIK */
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
         }
@@ -83,7 +83,7 @@
             position: relative;
         }
 
-        /* KİŞİSEL LOGO - Joseph Software'i temsil eden özel tasarım */
+        /* YENİ LOGO - Josephware için özel tasarım */
         .logo {
             display: flex;
             align-items: center;
@@ -98,31 +98,31 @@
             width: 45px;
             height: 45px;
             margin-right: 12px;
-            background: linear-gradient(135deg, #00c6ff, #0072ff);
+            background: linear-gradient(135deg, #4da6ff, #0066cc); /* DAHA AÇIK MAVİ */
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 114, 255, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 102, 204, 0.4);
         }
 
         .logo-icon::before {
             content: 'J';
             font-size: 24px;
             font-weight: bold;
-            color: #0a0a12;
+            color: #1a1a2a;
             z-index: 2;
         }
 
         .logo-icon::after {
-            content: 'S';
+            content: 'W'; /* W HARFİ */
             position: absolute;
             bottom: 5px;
             right: 5px;
             font-size: 12px;
             font-weight: bold;
-            color: #0a0a12;
+            color: #1a1a2a;
             opacity: 0.7;
             z-index: 2;
         }
@@ -137,8 +137,8 @@
                 0deg,
                 transparent,
                 transparent 2px,
-                rgba(255, 255, 255, 0.1) 2px,
-                rgba(255, 255, 255, 0.1) 4px
+                rgba(255, 255, 255, 0.15) 2px, /* DAHA AÇIK */
+                rgba(255, 255, 255, 0.15) 4px
             );
             animation: scan 3s linear infinite;
         }
@@ -153,13 +153,13 @@
         }
 
         .logo-text {
-            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            background: linear-gradient(90deg, #4da6ff, #0066cc); /* DAHA AÇIK MAVİ */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-size: 22px;
         }
 
-        /* HAMBURGER MENÜ - Mobil navigasyon (STİL İYİLEŞTİRİLDİ) */
+        /* HAMBURGER MENÜ - Mobil navigasyon */
         .menu-toggle {
             display: none;
             flex-direction: column;
@@ -175,15 +175,15 @@
             display: block;
             height: 4px;
             width: 100%;
-            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            background: linear-gradient(90deg, #4da6ff, #0066cc); /* DAHA AÇIK MAVİ */
             border-radius: 3px;
             transition: all 0.3s ease;
-            box-shadow: 0 0 5px rgba(0, 198, 255, 0.5);
+            box-shadow: 0 0 5px rgba(77, 166, 255, 0.6);
         }
 
         .menu-toggle.active span:nth-child(1) {
             transform: rotate(45deg) translate(10px, 10px);
-            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            background: linear-gradient(90deg, #4da6ff, #0066cc);
         }
 
         .menu-toggle.active span:nth-child(2) {
@@ -192,10 +192,10 @@
 
         .menu-toggle.active span:nth-child(3) {
             transform: rotate(-45deg) translate(7px, -7px);
-            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            background: linear-gradient(90deg, #4da6ff, #0066cc);
         }
 
-        /* NAVİGASYON - Menü öğeleri (MOBİL MENÜ STİLİ İYİLEŞTİRİLDİ) */
+        /* NAVİGASYON - Menü öğeleri */
         nav ul {
             list-style: none;
             display: flex;
@@ -206,7 +206,7 @@
         }
 
         nav ul li a {
-            color: #b0b0c0;
+            color: #d0d0e0; /* DAHA AÇIK */
             text-decoration: none;
             font-size: 16px;
             transition: all 0.3s;
@@ -225,7 +225,7 @@
             height: 2px;
             bottom: -5px;
             left: 0;
-            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            background: linear-gradient(90deg, #4da6ff, #0066cc); /* DAHA AÇIK MAVİ */
             transition: width 0.3s;
         }
 
@@ -233,19 +233,19 @@
             width: 100%;
         }
 
-        /* MOBİL MENÜ STİLİ (YENİ) */
+        /* MOBİL MENÜ STİLİ */
         @media (max-width: 768px) {
             nav {
                 position: absolute;
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background: linear-gradient(145deg, #0a0a12, #1a1a2a);
+                background: linear-gradient(145deg, #1a1a2a, #2a2a3c); /* DAHA AÇIK */
                 display: none;
                 padding: 20px 0;
-                border-top: 1px solid #2a2a3c;
+                border-top: 1px solid #3a3a4c;
                 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-                border-bottom: 2px solid #0072ff;
+                border-bottom: 2px solid #0066cc;
             }
             
             nav.active {
@@ -276,12 +276,12 @@
                 font-size: 18px;
                 border-radius: 5px;
                 transition: all 0.3s;
-                background: rgba(30, 30, 40, 0.5);
+                background: rgba(50, 50, 70, 0.6); /* DAHA AÇIK */
             }
             
             nav ul li a:hover {
-                background: linear-gradient(90deg, rgba(0, 198, 255, 0.2), rgba(0, 114, 255, 0.2));
-                color: #00c6ff;
+                background: linear-gradient(90deg, rgba(77, 166, 255, 0.3), rgba(0, 102, 204, 0.3));
+                color: #4da6ff;
                 transform: translateX(5px);
             }
         }
@@ -291,13 +291,13 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background: linear-gradient(90deg, #00c6ff, #0072ff);
-            color: #0a0a12;
+            background: linear-gradient(90deg, #4da6ff, #0066cc); /* DAHA AÇIK MAVİ */
+            color: #1a1a2a;
             padding: 8px 15px;
             border-radius: 20px;
             font-size: 14px;
             font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0, 114, 255, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 102, 204, 0.4);
             z-index: 999;
             display: flex;
             align-items: center;
@@ -324,7 +324,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(10, 10, 18, 0.7);
+            background: rgba(26, 26, 42, 0.7); /* DAHA AÇIK */
             z-index: 1;
         }
 
@@ -338,7 +338,7 @@
             margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 5px;
-            background: linear-gradient(90deg, #00c6ff, #0072ff, #00c6ff);
+            background: linear-gradient(90deg, #4da6ff, #0066cc, #4da6ff); /* DAHA AÇIK MAVİ */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-size: 200% auto;
@@ -350,14 +350,14 @@
             margin-bottom: 30px;
             max-width: 800px;
             line-height: 1.6;
-            color: #b0b0c0;
+            color: #d0d0e0; /* DAHA AÇIK */
         }
 
         .btn {
             display: inline-block;
             padding: 12px 30px;
-            background: linear-gradient(90deg, #00c6ff, #0072ff);
-            color: #0a0a12;
+            background: linear-gradient(90deg, #4da6ff, #0066cc); /* DAHA AÇIK MAVİ */
+            color: #1a1a2a;
             border: none;
             text-decoration: none;
             font-size: 16px;
@@ -368,12 +368,12 @@
             overflow: hidden;
             font-weight: bold;
             border-radius: 4px;
-            box-shadow: 0 4px 15px rgba(0, 114, 255, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 102, 204, 0.4);
         }
 
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 114, 255, 0.5);
+            box-shadow: 0 8px 25px rgba(0, 102, 204, 0.6);
         }
 
         @keyframes gradient {
@@ -404,7 +404,7 @@
             position: absolute;
             width: 100px;
             height: 3px;
-            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            background: linear-gradient(90deg, #4da6ff, #0066cc); /* DAHA AÇIK MAVİ */
             bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
@@ -425,8 +425,8 @@
         }
 
         .modal-content {
-            background: linear-gradient(145deg, #1a1a2a, #0f0f1f);
-            border: 1px solid #2a2a3c;
+            background: linear-gradient(145deg, #2a2a3c, #1f1f2f); /* DAHA AÇIK */
+            border: 1px solid #3a3a4c; /* DAHA AÇIK */
             border-radius: 10px;
             padding: 30px;
             max-width: 500px;
@@ -450,7 +450,7 @@
         .close-modal {
             background: none;
             border: none;
-            color: #b0b0c0;
+            color: #d0d0e0; /* DAHA AÇIK */
             font-size: 24px;
             cursor: pointer;
             transition: color 0.3s;
@@ -465,14 +465,14 @@
         }
 
         .modal-body p {
-            color: #b0b0c0;
+            color: #d0d0e0; /* DAHA AÇIK */
             line-height: 1.6;
             margin-bottom: 15px;
         }
 
         .message-preview {
-            background-color: rgba(30, 30, 40, 0.8);
-            border: 1px solid #2a2a3c;
+            background-color: rgba(50, 50, 70, 0.8); /* DAHA AÇIK */
+            border: 1px solid #3a3a4c; /* DAHA AÇIK */
             border-radius: 5px;
             padding: 15px;
             margin: 15px 0;
@@ -489,7 +489,7 @@
         /* ÖZELLİKLER BÖLÜMÜ - Hizmet özellikleri kataloğu */
         .features {
             padding: 100px 0;
-            background-color: rgba(15, 15, 25, 0.8);
+            background-color: rgba(30, 30, 50, 0.8); /* DAHA AÇIK */
         }
 
         .features-grid {
@@ -499,8 +499,8 @@
         }
 
         .feature-card {
-            background: linear-gradient(145deg, #1a1a2a, #0f0f1f);
-            border: 1px solid #2a2a3c;
+            background: linear-gradient(145deg, #2a2a3c, #1f1f2f); /* DAHA AÇIK */
+            border: 1px solid #3a3a4c; /* DAHA AÇIK */
             padding: 30px;
             border-radius: 8px;
             transition: all 0.3s;
@@ -511,8 +511,8 @@
 
         .feature-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 114, 255, 0.2);
-            border-color: #0072ff;
+            box-shadow: 0 15px 30px rgba(0, 102, 204, 0.3);
+            border-color: #0066cc;
         }
 
         .feature-card::before {
@@ -522,7 +522,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 198, 255, 0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(77, 166, 255, 0.15), transparent);
             transition: left 0.7s;
         }
 
@@ -533,7 +533,7 @@
         .feature-icon {
             font-size: 40px;
             margin-bottom: 20px;
-            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            background: linear-gradient(90deg, #4da6ff, #0066cc); /* DAHA AÇIK MAVİ */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -548,12 +548,12 @@
             font-size: 16px;
             line-height: 1.6;
             margin-bottom: 20px;
-            color: #b0b0c0;
+            color: #d0d0e0; /* DAHA AÇIK */
         }
 
         .feature-select {
-            background: linear-gradient(90deg, #00c6ff, #0072ff);
-            color: #0a0a12;
+            background: linear-gradient(90deg, #4da6ff, #0066cc); /* DAHA AÇIK MAVİ */
+            color: #1a1a2a;
             border: none;
             padding: 10px 20px;
             cursor: pointer;
@@ -565,17 +565,17 @@
 
         .feature-select:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 114, 255, 0.4);
+            box-shadow: 0 5px 15px rgba(0, 102, 204, 0.5);
         }
 
         .feature-select.selected {
-            background: linear-gradient(90deg, #00ff88, #00cc66);
+            background: linear-gradient(90deg, #66ff99, #00cc66);
         }
 
         /* HİZMETLER BÖLÜMÜ - Ana hizmetlerimiz */
         .services {
             padding: 100px 0;
-            background-color: rgba(10, 10, 18, 0.8);
+            background-color: rgba(26, 26, 42, 0.8); /* DAHA AÇIK */
         }
 
         .services-grid {
@@ -585,8 +585,8 @@
         }
 
         .service-card {
-            background: linear-gradient(145deg, #1a1a2a, #0f0f1f);
-            border: 1px solid #2a2a3c;
+            background: linear-gradient(145deg, #2a2a3c, #1f1f2f); /* DAHA AÇIK */
+            border: 1px solid #3a3a4c; /* DAHA AÇIK */
             padding: 40px 30px;
             border-radius: 8px;
             text-align: center;
@@ -597,14 +597,14 @@
 
         .service-card:hover {
             transform: scale(1.05);
-            box-shadow: 0 15px 30px rgba(0, 114, 255, 0.2);
-            border-color: #0072ff;
+            box-shadow: 0 15px 30px rgba(0, 102, 204, 0.3);
+            border-color: #0066cc;
         }
 
         .service-icon {
             font-size: 50px;
             margin-bottom: 25px;
-            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            background: linear-gradient(90deg, #4da6ff, #0066cc); /* DAHA AÇIK MAVİ */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -619,13 +619,13 @@
             font-size: 16px;
             line-height: 1.6;
             margin-bottom: 25px;
-            color: #b0b0c0;
+            color: #d0d0e0; /* DAHA AÇIK */
         }
 
-        /* PROJE GALERİSİ - Yapılan projelerin gösterimi (SOSYAL MEDYA YÖNETİMİ EKLENDİ) */
+        /* PROJE GALERİSİ - Yapılan projelerin gösterimi */
         .portfolio {
             padding: 100px 0;
-            background-color: rgba(15, 15, 25, 0.8);
+            background-color: rgba(30, 30, 50, 0.8); /* DAHA AÇIK */
         }
 
         .portfolio-filter {
@@ -637,8 +637,8 @@
 
         .filter-btn {
             background: transparent;
-            border: 1px solid #2a2a3c;
-            color: #b0b0c0;
+            border: 1px solid #3a3a4c; /* DAHA AÇIK */
+            color: #d0d0e0; /* DAHA AÇIK */
             padding: 8px 20px;
             margin: 5px;
             cursor: pointer;
@@ -647,9 +647,9 @@
         }
 
         .filter-btn.active, .filter-btn:hover {
-            background: linear-gradient(90deg, #00c6ff, #0072ff);
-            color: #0a0a12;
-            border-color: #0072ff;
+            background: linear-gradient(90deg, #4da6ff, #0066cc); /* DAHA AÇIK MAVİ */
+            color: #1a1a2a;
+            border-color: #0066cc;
         }
 
         .portfolio-grid {
@@ -683,7 +683,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, transparent, rgba(0, 10, 20, 0.9));
+            background: linear-gradient(to bottom, transparent, rgba(10, 20, 30, 0.8)); /* DAHA AÇIK */
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
@@ -702,14 +702,14 @@
         }
 
         .portfolio-overlay p {
-            color: #b0b0c0;
+            color: #d0d0e0; /* DAHA AÇIK */
             font-size: 14px;
         }
 
         /* BLOG BÖLÜMÜ - Yazılım blogu */
         .blog {
             padding: 100px 0;
-            background-color: rgba(10, 10, 18, 0.8);
+            background-color: rgba(26, 26, 42, 0.8); /* DAHA AÇIK */
             background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') no-repeat center center;
             background-size: cover;
             background-attachment: fixed;
@@ -723,7 +723,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(10, 10, 18, 0.85);
+            background: rgba(26, 26, 42, 0.85); /* DAHA AÇIK */
             z-index: 1;
         }
 
@@ -739,8 +739,8 @@
         }
 
         .blog-card {
-            background: linear-gradient(145deg, #1a1a2a, #0f0f1f);
-            border: 1px solid #2a2a3c;
+            background: linear-gradient(145deg, #2a2a3c, #1f1f2f); /* DAHA AÇIK */
+            border: 1px solid #3a3a4c; /* DAHA AÇIK */
             border-radius: 8px;
             overflow: hidden;
             transition: all 0.3s;
@@ -749,7 +749,7 @@
 
         .blog-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 114, 255, 0.2);
+            box-shadow: 0 15px 30px rgba(0, 102, 204, 0.3);
         }
 
         .blog-image {
@@ -779,7 +779,7 @@
         }
 
         .blog-content p {
-            color: #b0b0c0;
+            color: #d0d0e0; /* DAHA AÇIK */
             margin-bottom: 15px;
             font-size: 14px;
             line-height: 1.6;
@@ -788,16 +788,16 @@
         .blog-meta {
             display: flex;
             justify-content: space-between;
-            color: #707080;
+            color: #a0a0b0; /* DAHA AÇIK */
             font-size: 12px;
-            border-top: 1px solid #2a2a3c;
+            border-top: 1px solid #3a3a4c; /* DAHA AÇIK */
             padding-top: 15px;
         }
 
-        /* İSTATİSTİKLER BÖLÜMÜ - Başarı istatistikleri (MUTLU MÜŞTERİ SAYISI ARTIRILDI) */
+        /* İSTATİSTİKLER BÖLÜMÜ - Başarı istatistikleri */
         .stats {
             padding: 80px 0;
-            background: linear-gradient(135deg, #0a0a12, #1a1a2a);
+            background: linear-gradient(135deg, #1a1a2a, #2a2a3c); /* DAHA AÇIK */
             background: url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') no-repeat center center;
             background-size: cover;
             position: relative;
@@ -810,7 +810,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(10, 10, 18, 0.8);
+            background: rgba(26, 26, 42, 0.8); /* DAHA AÇIK */
             z-index: 1;
         }
 
@@ -833,21 +833,21 @@
         .stat-number {
             font-size: 48px;
             font-weight: bold;
-            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            background: linear-gradient(90deg, #4da6ff, #0066cc); /* DAHA AÇIK MAVİ */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 10px;
         }
 
         .stat-text {
-            color: #b0b0c0;
+            color: #d0d0e0; /* DAHA AÇIK */
             font-size: 18px;
         }
 
-        /* İLETİŞİM BÖLÜMÜ - Form ve iletişim bilgileri (TELEFON VE ADRES KALDIRILDI) */
+        /* İLETİŞİM BÖLÜMÜ - Form ve iletişim bilgileri */
         .contact {
             padding: 100px 0;
-            background-color: rgba(15, 15, 25, 0.8);
+            background-color: rgba(30, 30, 50, 0.8); /* DAHA AÇIK */
             background: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') no-repeat center center;
             background-size: cover;
             position: relative;
@@ -860,7 +860,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(15, 15, 25, 0.85);
+            background: rgba(30, 30, 50, 0.85); /* DAHA AÇIK */
             z-index: 1;
         }
 
@@ -890,12 +890,12 @@
         .contact-icon {
             width: 50px;
             height: 50px;
-            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            background: linear-gradient(90deg, #4da6ff, #0066cc); /* DAHA AÇIK MAVİ */
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #0a0a12;
+            color: #1a1a2a;
             font-size: 20px;
             flex-shrink: 0;
         }
@@ -906,12 +906,12 @@
         }
 
         .contact-details p {
-            color: #b0b0c0;
+            color: #d0d0e0; /* DAHA AÇIK */
         }
 
         .contact-form {
-            background: linear-gradient(145deg, #1a1a2a, #0f0f1f);
-            border: 1px solid #2a2a3c;
+            background: linear-gradient(145deg, #2a2a3c, #1f1f2f); /* DAHA AÇIK */
+            border: 1px solid #3a3a4c; /* DAHA AÇIK */
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -933,9 +933,9 @@
         .form-group select {
             width: 100%;
             padding: 12px;
-            background-color: rgba(30, 30, 40, 0.8);
-            border: 1px solid #2a2a3c;
-            color: #e0e0e0;
+            background-color: rgba(50, 50, 70, 0.8); /* DAHA AÇIK */
+            border: 1px solid #3a3a4c; /* DAHA AÇIK */
+            color: #f0f0f0;
             font-size: 16px;
             border-radius: 4px;
             transition: all 0.3s;
@@ -945,8 +945,8 @@
         .form-group textarea:focus,
         .form-group select:focus {
             outline: none;
-            border-color: #0072ff;
-            box-shadow: 0 0 10px rgba(0, 114, 255, 0.3);
+            border-color: #0066cc;
+            box-shadow: 0 0 10px rgba(0, 102, 204, 0.4);
         }
 
         .form-group textarea {
@@ -956,17 +956,17 @@
 
         .form-group select {
             appearance: none;
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300c6ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234da6ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
             background-repeat: no-repeat;
             background-position: right 10px center;
             background-size: 16px;
         }
 
-        /* FOOTER - Alt bilgi ve sosyal medya bağlantıları (YIL 2025 YAPILDI) */
+        /* FOOTER - Alt bilgi ve sosyal medya bağlantıları */
         footer {
-            background-color: #05050a;
+            background-color: #0f0f1f; /* DAHA AÇIK */
             padding: 50px 0 20px;
-            border-top: 1px solid #2a2a3c;
+            border-top: 1px solid #3a3a4c; /* DAHA AÇIK */
         }
 
         .footer-content {
@@ -989,7 +989,7 @@
             position: absolute;
             width: 50px;
             height: 2px;
-            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            background: linear-gradient(90deg, #4da6ff, #0066cc); /* DAHA AÇIK MAVİ */
             bottom: 0;
             left: 0;
         }
@@ -997,7 +997,7 @@
         .footer-section p {
             line-height: 1.6;
             margin-bottom: 15px;
-            color: #b0b0c0;
+            color: #d0d0e0; /* DAHA AÇIK */
         }
 
         .footer-section ul {
@@ -1009,13 +1009,13 @@
         }
 
         .footer-section ul li a {
-            color: #b0b0c0;
+            color: #d0d0e0; /* DAHA AÇIK */
             text-decoration: none;
             transition: all 0.3s;
         }
 
         .footer-section ul li a:hover {
-            color: #00c6ff;
+            color: #4da6ff;
             padding-left: 5px;
         }
 
@@ -1031,8 +1031,8 @@
             justify-content: center;
             width: 40px;
             height: 40px;
-            background: linear-gradient(90deg, #00c6ff, #0072ff);
-            color: #0a0a12;
+            background: linear-gradient(90deg, #4da6ff, #0066cc); /* DAHA AÇIK MAVİ */
+            color: #1a1a2a;
             border-radius: 50%;
             text-decoration: none;
             transition: all 0.3s;
@@ -1040,12 +1040,12 @@
 
         .social-icons a:hover {
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 114, 255, 0.4);
+            box-shadow: 0 5px 15px rgba(0, 102, 204, 0.5);
         }
 
         .instagram-highlight {
-            background: linear-gradient(90deg, #00c6ff, #0072ff);
-            color: #0a0a12;
+            background: linear-gradient(90deg, #4da6ff, #0066cc); /* DAHA AÇIK MAVİ */
+            color: #1a1a2a;
             padding: 10px 15px;
             border-radius: 4px;
             font-weight: bold;
@@ -1069,10 +1069,10 @@
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background: linear-gradient(145deg, #0a0a12, #1a1a2a);
+                background: linear-gradient(145deg, #1a1a2a, #2a2a3c);
                 display: none;
                 padding: 20px 0;
-                border-top: 1px solid #2a2a3c;
+                border-top: 1px solid #3a3a4c;
                 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
             }
             
@@ -1104,12 +1104,12 @@
                 font-size: 18px;
                 border-radius: 5px;
                 transition: all 0.3s;
-                background: rgba(30, 30, 40, 0.5);
+                background: rgba(50, 50, 70, 0.6);
             }
             
             nav ul li a:hover {
-                background: linear-gradient(90deg, rgba(0, 198, 255, 0.2), rgba(0, 114, 255, 0.2));
-                color: #00c6ff;
+                background: linear-gradient(90deg, rgba(77, 166, 255, 0.3), rgba(0, 102, 204, 0.3));
+                color: #4da6ff;
                 transform: translateX(5px);
             }
             
@@ -1195,7 +1195,7 @@
                 <div class="logo-icon">
                     <div class="code-effect"></div>
                 </div>
-                <div class="logo-text">Joseph Software</div>
+                <div class="logo-text">Josephware</div> <!-- İSİM DEĞİŞTİ -->
             </div>
             <div class="menu-toggle" id="mobile-menu">
                 <span></span>
@@ -1217,7 +1217,7 @@
     <!-- HERO BÖLÜMÜ - Ana tanıtım alanı -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Joseph Software</h1>
+            <h1>Josephware</h1> <!-- İSİM DEĞİŞTİ -->
             <p>Profesyonel yazılım çözümleri ile işletmenizi bir sonraki seviyeye taşıyın. Yenilikçi teknolojiler ve uzman ekibimizle özelleştirilmiş yazılım hizmetleri sunuyoruz.</p>
             <a href="#features" class="btn">Özellikleri Keşfet</a>
         </div>
@@ -1295,7 +1295,7 @@
         </div>
     </section>
 
-    <!-- PROJE GALERİSİ - Yapılan projelerin gösterimi (SOSYAL MEDYA YÖNETİMİ EKLENDİ) -->
+    <!-- PROJE GALERİSİ - Yapılan projelerin gösterimi -->
     <section class="portfolio" id="portfolio">
         <div class="container">
             <h2 class="section-title">Projelerimiz</h2>
@@ -1378,7 +1378,7 @@
                         <p>Yapay zeka teknolojilerinin yazılım geliştirme süreçlerine entegrasyonu ve sağladığı faydalar.</p>
                         <div class="blog-meta">
                             <span><i class="far fa-calendar"></i> 15 Haziran 2023</span>
-                            <span><i class="far fa-user"></i> Joseph Software</span>
+                            <span><i class="far fa-user"></i> Josephware</span> <!-- İSİM DEĞİŞTİ -->
                         </div>
                     </div>
                 </div>
@@ -1393,7 +1393,7 @@
                         <p>Modern web uygulamalarında güvenlik açıkları ve korunma yöntemleri hakkında kapsamlı rehber.</p>
                         <div class="blog-meta">
                             <span><i class="far fa-calendar"></i> 2 Temmuz 2023</span>
-                            <span><i class="far fa-user"></i> Joseph Software</span>
+                            <span><i class="far fa-user"></i> Josephware</span> <!-- İSİM DEĞİŞTİ -->
                         </div>
                     </div>
                 </div>
@@ -1408,7 +1408,7 @@
                         <p>2023 yılında yazılım geliştirme dünyasında öne çıkan trendler ve teknolojiler.</p>
                         <div class="blog-meta">
                             <span><i class="far fa-calendar"></i> 20 Ağustos 2023</span>
-                            <span><i class="far fa-user"></i> Joseph Software</span>
+                            <span><i class="far fa-user"></i> Josephware</span> <!-- İSİM DEĞİŞTİ -->
                         </div>
                     </div>
                 </div>
@@ -1416,7 +1416,7 @@
         </div>
     </section>
 
-    <!-- İSTATİSTİKLER BÖLÜMÜ - Başarı istatistikleri (MUTLU MÜŞTERİ SAYISI ARTIRILDI) -->
+    <!-- İSTATİSTİKLER BÖLÜMÜ - Başarı istatistikleri -->
     <section class="stats">
         <div class="container">
             <div class="stats-grid">
@@ -1440,7 +1440,7 @@
         </div>
     </section>
 
-    <!-- İLETİŞİM BÖLÜMÜ - Form ve iletişim bilgileri (TELEFON VE ADRES KALDIRILDI) -->
+    <!-- İLETİŞİM BÖLÜMÜ - Form ve iletişim bilgileri -->
     <section class="contact" id="contact">
         <div class="container">
             <h2 class="section-title">İletişim</h2>
@@ -1504,12 +1504,12 @@
         </div>
     </section>
 
-    <!-- FOOTER - Alt bilgi ve sosyal medya bağlantıları (YIL 2025 YAPILDI) -->
+    <!-- FOOTER - Alt bilgi ve sosyal medya bağlantıları -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Joseph Software</h3>
+                    <h3>Josephware</h3> <!-- İSİM DEĞİŞTİ -->
                     <p>Profesyonel yazılım çözümleri ile işletmenizin dijital dönüşümüne liderlik ediyoruz.</p>
                     <div class="social-icons">
                         <a href="https://www.instagram.com/01_joseph_10/" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -1540,25 +1540,25 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Joseph Software. Tüm hakları saklıdır. | Instagram: @01_joseph_10</p>
+                <p>&copy; 2025 Josephware. Tüm hakları saklıdır. | Instagram: @01_joseph_10</p> <!-- İSİM DEĞİŞTİ -->
             </div>
         </div>
     </footer>
 
     <script>
-        // SİTE GÖRÜNTÜLENME SAYACI (HER SAYFA YÜKLENİŞİNDE 1 ARTIŞ)
+        // SİTE GÖRÜNTÜLENME SAYACI (KALDIĞI YERDEN DEVAM)
         function updateViewCount() {
             let views = localStorage.getItem('siteViews');
             if (views) {
                 views = parseInt(views) + 1; // Her sayfa yüklemede 1 artış
             } else {
-                views = 300; // 300'den başlat
+                views = 1; // İlk defa girildiğinde 1'den başla
             }
             localStorage.setItem('siteViews', views);
             document.getElementById('viewCount').textContent = views.toLocaleString();
         }
 
-        // HAMBURGER MENÜ - Mobil navigasyon kontrolü (GELİŞTİRİLDİ)
+        // HAMBURGER MENÜ - Mobil navigasyon kontrolü
         const mobileMenu = document.getElementById('mobile-menu');
         const mainNav = document.getElementById('main-nav');
 
@@ -1591,9 +1591,9 @@
             const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789{}[]()<>;:=+-*/%&|^~!?@#$';
             let result = '';
             for (let i = 0; i < length; i++) {
-                // Rastgele "Joseph Software" ekleme
-                if (Math.random() < 0.05) { // %5 olasılıkla Joseph Software ekle
-                    result += ' JosephSoftware ';
+                // Rastgele "Josephware" ekleme
+                if (Math.random() < 0.05) { // %5 olasılıkla Josephware ekle
+                    result += ' Josephware ';
                 }
                 result += characters.charAt(Math.floor(Math.random() * characters.length));
             }
@@ -1652,7 +1652,7 @@
             });
         });
 
-        // ÖZELLİK SEÇME BUTONLARI - Kullanıcı tercihlerini kaydetme (TOGGLE ÖZELLİĞİ EKLENDİ)
+        // ÖZELLİK SEÇME BUTONLARI - Kullanıcı tercihlerini kaydetme
         document.querySelectorAll('.feature-select').forEach(button => {
             button.addEventListener('click', function() {
                 const featureTitle = this.parentElement.querySelector('h3').textContent;
@@ -1672,7 +1672,7 @@
                     this.classList.add('selected');
                     
                     // Instagram DM için mesaj hazırla
-                    const instagramMessage = `Merhaba Joseph Software!\n\nWeb sitenizden bir özellik talebim var:\n\nİstediğim Özellik: ${featureTitle}\n\nBu özellik hakkında detaylı bilgi almak istiyorum. Teşekkürler!`;
+                    const instagramMessage = `Merhaba Josephware!\n\nWeb sitenizden bir özellik talebim var:\n\nİstediğim Özellik: ${featureTitle}\n\nBu özellik hakkında detaylı bilgi almak istiyorum. Teşekkürler!`;
                     
                     // Modal başlığını güncelle
                     document.querySelector('.modal-header h2').textContent = 'Özellik Talebi Gönder';
@@ -1689,7 +1689,7 @@
             });
         });
 
-        // PROJE FİLTRELEME - Portfolio bölümü için filtreleme işlevi (SOSYAL MEDYA EKLENDİ)
+        // PROJE FİLTRELEME - Portfolio bölümü için filtreleme işlevi
         document.querySelectorAll('.filter-btn').forEach(button => {
             button.addEventListener('click', function() {
                 // Tüm butonlardan active classını kaldır
@@ -1719,8 +1719,8 @@
             notification.style.position = 'fixed';
             notification.style.bottom = '20px';
             notification.style.right = '20px';
-            notification.style.background = 'linear-gradient(90deg, #00c6ff, #0072ff)';
-            notification.style.color = '#0a0a12';
+            notification.style.background = 'linear-gradient(90deg, #4da6ff, #0066cc)';
+            notification.style.color = '#1a1a2a';
             notification.style.padding = '15px 25px';
             notification.style.borderRadius = '4px';
             notification.style.boxShadow = '0 5px 15px rgba(0,0,0,0.3)';
@@ -1755,7 +1755,7 @@
                 'social': 'Sosyal Medya Yönetimi'
             };
             
-            const instagramMessage = `Merhaba Joseph Software!\n\nBen: ${name}\nİlgilendiğim hizmet: ${serviceTexts[service]}\n\nMesajım:\n${message}\n\nTeşekkürler!`;
+            const instagramMessage = `Merhaba Josephware!\n\nBen: ${name}\nİlgilendiğim hizmet: ${serviceTexts[service]}\n\nMesajım:\n${message}\n\nTeşekkürler!`;
             
             // Mesajı modal'da göster
             messagePreview.textContent = instagramMessage;
