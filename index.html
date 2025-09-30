@@ -286,24 +286,6 @@
             }
         }
 
-        /* SİTE GÖRÜNTÜLENME SAYACI */
-        .view-counter {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: linear-gradient(90deg, #4da6ff, #0066cc); /* DAHA AÇIK MAVİ */
-            color: #1a1a2a;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0, 102, 204, 0.4);
-            z-index: 999;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
         /* HERO BÖLÜMÜ - Ana tanıtım alanı */
         .hero {
             height: 100vh;
@@ -1142,13 +1124,6 @@
                 left: 50%;
                 transform: translateX(-50%);
             }
-            
-            .view-counter {
-                bottom: 10px;
-                right: 10px;
-                font-size: 12px;
-                padding: 6px 12px;
-            }
         }
     </style>
 </head>
@@ -1156,12 +1131,6 @@
     <!-- YANLARDAN AKAN KODLAR - Hacker teması için özel efekt -->
     <div class="code-stream left"></div>
     <div class="code-stream right"></div>
-
-    <!-- SİTE GÖRÜNTÜLENME SAYACI -->
-    <div class="view-counter">
-        <i class="fas fa-eye"></i>
-        <span id="viewCount">0</span> Görüntülenme
-    </div>
 
     <!-- MODAL - Instagram DM gönderimi için -->
     <div class="modal" id="instagramModal">
@@ -1195,7 +1164,7 @@
                 <div class="logo-icon">
                     <div class="code-effect"></div>
                 </div>
-                <div class="logo-text">Josephware</div> <!-- İSİM DEĞİŞTİ -->
+                <div class="logo-text">Josephware</div>
             </div>
             <div class="menu-toggle" id="mobile-menu">
                 <span></span>
@@ -1217,7 +1186,7 @@
     <!-- HERO BÖLÜMÜ - Ana tanıtım alanı -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Josephware</h1> <!-- İSİM DEĞİŞTİ -->
+            <h1>Josephware</h1>
             <p>Profesyonel yazılım çözümleri ile işletmenizi bir sonraki seviyeye taşıyın. Yenilikçi teknolojiler ve uzman ekibimizle özelleştirilmiş yazılım hizmetleri sunuyoruz.</p>
             <a href="#features" class="btn">Özellikleri Keşfet</a>
         </div>
@@ -1378,7 +1347,7 @@
                         <p>Yapay zeka teknolojilerinin yazılım geliştirme süreçlerine entegrasyonu ve sağladığı faydalar.</p>
                         <div class="blog-meta">
                             <span><i class="far fa-calendar"></i> 15 Haziran 2023</span>
-                            <span><i class="far fa-user"></i> Josephware</span> <!-- İSİM DEĞİŞTİ -->
+                            <span><i class="far fa-user"></i> Josephware</span>
                         </div>
                     </div>
                 </div>
@@ -1393,7 +1362,7 @@
                         <p>Modern web uygulamalarında güvenlik açıkları ve korunma yöntemleri hakkında kapsamlı rehber.</p>
                         <div class="blog-meta">
                             <span><i class="far fa-calendar"></i> 2 Temmuz 2023</span>
-                            <span><i class="far fa-user"></i> Josephware</span> <!-- İSİM DEĞİŞTİ -->
+                            <span><i class="far fa-user"></i> Josephware</span>
                         </div>
                     </div>
                 </div>
@@ -1408,7 +1377,7 @@
                         <p>2023 yılında yazılım geliştirme dünyasında öne çıkan trendler ve teknolojiler.</p>
                         <div class="blog-meta">
                             <span><i class="far fa-calendar"></i> 20 Ağustos 2023</span>
-                            <span><i class="far fa-user"></i> Josephware</span> <!-- İSİM DEĞİŞTİ -->
+                            <span><i class="far fa-user"></i> Josephware</span>
                         </div>
                     </div>
                 </div>
@@ -1509,7 +1478,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Josephware</h3> <!-- İSİM DEĞİŞTİ -->
+                    <h3>Josephware</h3>
                     <p>Profesyonel yazılım çözümleri ile işletmenizin dijital dönüşümüne liderlik ediyoruz.</p>
                     <div class="social-icons">
                         <a href="https://www.instagram.com/01_joseph_10/" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -1540,30 +1509,12 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Josephware. Tüm hakları saklıdır. | Instagram: @01_joseph_10</p> <!-- İSİM DEĞİŞTİ -->
+                <p>&copy; 2025 Josephware. Tüm hakları saklıdır. | Instagram: @01_joseph_10</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // SİTE GÖRÜNTÜLENME SAYACI (1'den başlayıp her ziyarette 1 artar)
-        function updateViewCount() {
-            // Önce localStorage'ı temizleyelim (sadece bu seferlik)
-            if (!localStorage.getItem('counterReset')) {
-                localStorage.removeItem('siteViews');
-                localStorage.setItem('counterReset', 'true');
-            }
-            
-            let views = localStorage.getItem('siteViews');
-            if (views) {
-                views = parseInt(views) + 1;
-            } else {
-                views = 1;
-            }
-            localStorage.setItem('siteViews', views);
-            document.getElementById('viewCount').textContent = views.toLocaleString();
-        }
-
         // HAMBURGER MENÜ - Mobil navigasyon kontrolü
         const mobileMenu = document.getElementById('mobile-menu');
         const mainNav = document.getElementById('main-nav');
@@ -1776,7 +1727,6 @@
         // SAYFA YÜKLENDİĞİNDE - Tüm işlevleri başlatma
         window.addEventListener('load', function() {
             initCodeStream();
-            updateViewCount();
         });
 
         // DÜZGÜN KAYDIRMA - Navigasyon bağlantıları için smooth scroll
