@@ -4,9 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Josephware | Profesyonel Yazılım Çözümleri</title>
+    <meta name="description" content="Josephware - Profesyonel yazılım çözümleri, web geliştirme, e-ticaret ve kurumsal yazılım hizmetleri. İşletmenizi bir sonraki seviyeye taşıyın.">
+    <meta name="keywords" content="yazılım, web geliştirme, e-ticaret, kurumsal yazılım, josephware">
+    <meta name="author" content="Josephware">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* GENEL STİLLER - Tüm sayfa için temel ayarlar */
+        /* GENEL STİLLER */
+        :root {
+            --primary-color: #4da6ff;
+            --secondary-color: #0066cc;
+            --dark-bg: #1a1a2a;
+            --darker-bg: #0f0f1f;
+            --light-text: #f0f0f0;
+            --medium-text: #d0d0e0;
+            --border-color: #3a3a4c;
+            --card-bg: #2a2a3c;
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -14,20 +28,25 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        body {
-            background-color: #1a1a2a; /* DAHA AÇIK TEMA */
-            color: #f0f0f0; /* DAHA AÇIK METİN */
-            overflow-x: hidden;
-            position: relative;
+        html {
+            scroll-behavior: smooth;
         }
 
-        /* YANLARDAN AKAN KODLAR - Hacker teması için özel efekt */
+        body {
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            overflow-x: hidden;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        /* YANLARDAN AKAN KODLAR */
         .code-stream {
             position: fixed;
             top: 0;
             width: 120px;
             height: 100%;
-            color: rgba(100, 200, 255, 0.6); /* DAHA AÇIK MAVİ */
+            color: rgba(100, 200, 255, 0.6);
             font-size: 16px;
             z-index: -1;
             white-space: nowrap;
@@ -57,15 +76,15 @@
             }
         }
 
-        /* HEADER - Navigasyon ve logo bölümü */
+        /* HEADER */
         header {
-            background-color: rgba(26, 26, 42, 0.95); /* DAHA AÇIK */
+            background-color: rgba(26, 26, 42, 0.95);
             padding: 15px 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid #3a3a4c; /* DAHA AÇIK */
+            border-bottom: 1px solid var(--border-color);
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
         }
@@ -83,7 +102,7 @@
             position: relative;
         }
 
-        /* YENİ LOGO - Josephware için özel tasarım */
+        /* LOGO */
         .logo {
             display: flex;
             align-items: center;
@@ -98,7 +117,7 @@
             width: 45px;
             height: 45px;
             margin-right: 12px;
-            background: linear-gradient(135deg, #4da6ff, #0066cc); /* DAHA AÇIK MAVİ */
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             border-radius: 10px;
             display: flex;
             align-items: center;
@@ -111,18 +130,18 @@
             content: 'J';
             font-size: 24px;
             font-weight: bold;
-            color: #1a1a2a;
+            color: var(--dark-bg);
             z-index: 2;
         }
 
         .logo-icon::after {
-            content: 'W'; /* W HARFİ */
+            content: 'W';
             position: absolute;
             bottom: 5px;
             right: 5px;
             font-size: 12px;
             font-weight: bold;
-            color: #1a1a2a;
+            color: var(--dark-bg);
             opacity: 0.7;
             z-index: 2;
         }
@@ -137,7 +156,7 @@
                 0deg,
                 transparent,
                 transparent 2px,
-                rgba(255, 255, 255, 0.15) 2px, /* DAHA AÇIK */
+                rgba(255, 255, 255, 0.15) 2px,
                 rgba(255, 255, 255, 0.15) 4px
             );
             animation: scan 3s linear infinite;
@@ -153,13 +172,14 @@
         }
 
         .logo-text {
-            background: linear-gradient(90deg, #4da6ff, #0066cc); /* DAHA AÇIK MAVİ */
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
             font-size: 22px;
         }
 
-        /* HAMBURGER MENÜ - Mobil navigasyon */
+        /* HAMBURGER MENÜ */
         .menu-toggle {
             display: none;
             flex-direction: column;
@@ -175,7 +195,7 @@
             display: block;
             height: 4px;
             width: 100%;
-            background: linear-gradient(90deg, #4da6ff, #0066cc); /* DAHA AÇIK MAVİ */
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
             border-radius: 3px;
             transition: all 0.3s ease;
             box-shadow: 0 0 5px rgba(77, 166, 255, 0.6);
@@ -183,7 +203,7 @@
 
         .menu-toggle.active span:nth-child(1) {
             transform: rotate(45deg) translate(10px, 10px);
-            background: linear-gradient(90deg, #4da6ff, #0066cc);
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
         }
 
         .menu-toggle.active span:nth-child(2) {
@@ -192,10 +212,10 @@
 
         .menu-toggle.active span:nth-child(3) {
             transform: rotate(-45deg) translate(7px, -7px);
-            background: linear-gradient(90deg, #4da6ff, #0066cc);
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
         }
 
-        /* NAVİGASYON - Menü öğeleri */
+        /* NAVİGASYON */
         nav ul {
             list-style: none;
             display: flex;
@@ -206,7 +226,7 @@
         }
 
         nav ul li a {
-            color: #d0d0e0; /* DAHA AÇIK */
+            color: var(--medium-text);
             text-decoration: none;
             font-size: 16px;
             transition: all 0.3s;
@@ -214,8 +234,10 @@
             font-weight: 500;
         }
 
-        nav ul li a:hover {
+        nav ul li a:hover,
+        nav ul li a:focus {
             color: #ffffff;
+            outline: none;
         }
 
         nav ul li a::after {
@@ -225,27 +247,28 @@
             height: 2px;
             bottom: -5px;
             left: 0;
-            background: linear-gradient(90deg, #4da6ff, #0066cc); /* DAHA AÇIK MAVİ */
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
             transition: width 0.3s;
         }
 
-        nav ul li a:hover::after {
+        nav ul li a:hover::after,
+        nav ul li a:focus::after {
             width: 100%;
         }
 
-        /* MOBİL MENÜ STİLİ */
+        /* MOBİL MENÜ */
         @media (max-width: 768px) {
             nav {
                 position: absolute;
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background: linear-gradient(145deg, #1a1a2a, #2a2a3c); /* DAHA AÇIK */
+                background: linear-gradient(145deg, var(--dark-bg), var(--card-bg));
                 display: none;
                 padding: 20px 0;
-                border-top: 1px solid #3a3a4c;
+                border-top: 1px solid var(--border-color);
                 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-                border-bottom: 2px solid #0066cc;
+                border-bottom: 2px solid var(--secondary-color);
             }
             
             nav.active {
@@ -276,17 +299,18 @@
                 font-size: 18px;
                 border-radius: 5px;
                 transition: all 0.3s;
-                background: rgba(50, 50, 70, 0.6); /* DAHA AÇIK */
+                background: rgba(50, 50, 70, 0.6);
             }
             
-            nav ul li a:hover {
+            nav ul li a:hover,
+            nav ul li a:focus {
                 background: linear-gradient(90deg, rgba(77, 166, 255, 0.3), rgba(0, 102, 204, 0.3));
-                color: #4da6ff;
+                color: var(--primary-color);
                 transform: translateX(5px);
             }
         }
 
-        /* HERO BÖLÜMÜ - Ana tanıtım alanı */
+        /* HERO BÖLÜMÜ */
         .hero {
             height: 100vh;
             display: flex;
@@ -306,40 +330,42 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(26, 26, 42, 0.7); /* DAHA AÇIK */
+            background: rgba(26, 26, 42, 0.7);
             z-index: 1;
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
         }
 
         .hero-content h1 {
-            font-size: 48px;
+            font-size: clamp(2.5rem, 5vw, 4rem);
             margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 5px;
-            background: linear-gradient(90deg, #4da6ff, #0066cc, #4da6ff); /* DAHA AÇIK MAVİ */
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--primary-color));
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
             background-size: 200% auto;
             animation: gradient 3s linear infinite;
         }
 
         .hero-content p {
-            font-size: 20px;
+            font-size: clamp(1rem, 2vw, 1.25rem);
             margin-bottom: 30px;
-            max-width: 800px;
             line-height: 1.6;
-            color: #d0d0e0; /* DAHA AÇIK */
+            color: var(--medium-text);
         }
 
         .btn {
             display: inline-block;
             padding: 12px 30px;
-            background: linear-gradient(90deg, #4da6ff, #0066cc); /* DAHA AÇIK MAVİ */
-            color: #1a1a2a;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: var(--dark-bg);
             border: none;
             text-decoration: none;
             font-size: 16px;
@@ -351,11 +377,14 @@
             font-weight: bold;
             border-radius: 4px;
             box-shadow: 0 4px 15px rgba(0, 102, 204, 0.4);
+            cursor: pointer;
         }
 
-        .btn:hover {
+        .btn:hover,
+        .btn:focus {
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(0, 102, 204, 0.6);
+            outline: none;
         }
 
         @keyframes gradient {
@@ -370,10 +399,10 @@
             }
         }
 
-        /* BÖLÜM BAŞLIKLARI - Tüm bölümlerde ortak stil */
+        /* BÖLÜM BAŞLIKLARI */
         .section-title {
             text-align: center;
-            font-size: 36px;
+            font-size: clamp(1.75rem, 4vw, 2.25rem);
             margin-bottom: 60px;
             text-transform: uppercase;
             letter-spacing: 3px;
@@ -386,13 +415,13 @@
             position: absolute;
             width: 100px;
             height: 3px;
-            background: linear-gradient(90deg, #4da6ff, #0066cc); /* DAHA AÇIK MAVİ */
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
             bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
         }
 
-        /* MODAL - Instagram DM gönderimi için */
+        /* MODAL */
         .modal {
             display: none;
             position: fixed;
@@ -407,8 +436,8 @@
         }
 
         .modal-content {
-            background: linear-gradient(145deg, #2a2a3c, #1f1f2f); /* DAHA AÇIK */
-            border: 1px solid #3a3a4c; /* DAHA AÇIK */
+            background: linear-gradient(145deg, var(--card-bg), #1f1f2f);
+            border: 1px solid var(--border-color);
             border-radius: 10px;
             padding: 30px;
             max-width: 500px;
@@ -432,14 +461,16 @@
         .close-modal {
             background: none;
             border: none;
-            color: #d0d0e0; /* DAHA AÇIK */
+            color: var(--medium-text);
             font-size: 24px;
             cursor: pointer;
             transition: color 0.3s;
         }
 
-        .close-modal:hover {
+        .close-modal:hover,
+        .close-modal:focus {
             color: #ffffff;
+            outline: none;
         }
 
         .modal-body {
@@ -447,31 +478,34 @@
         }
 
         .modal-body p {
-            color: #d0d0e0; /* DAHA AÇIK */
+            color: var(--medium-text);
             line-height: 1.6;
             margin-bottom: 15px;
         }
 
         .message-preview {
-            background-color: rgba(50, 50, 70, 0.8); /* DAHA AÇIK */
-            border: 1px solid #3a3a4c; /* DAHA AÇIK */
+            background-color: rgba(50, 50, 70, 0.8);
+            border: 1px solid var(--border-color);
             border-radius: 5px;
             padding: 15px;
             margin: 15px 0;
             font-family: 'Courier New', monospace;
             white-space: pre-wrap;
+            max-height: 150px;
+            overflow-y: auto;
         }
 
         .modal-footer {
             display: flex;
             justify-content: flex-end;
             gap: 10px;
+            flex-wrap: wrap;
         }
 
-        /* ÖZELLİKLER BÖLÜMÜ - Hizmet özellikleri kataloğu */
+        /* ÖZELLİKLER BÖLÜMÜ */
         .features {
             padding: 100px 0;
-            background-color: rgba(30, 30, 50, 0.8); /* DAHA AÇIK */
+            background-color: rgba(30, 30, 50, 0.8);
         }
 
         .features-grid {
@@ -481,20 +515,23 @@
         }
 
         .feature-card {
-            background: linear-gradient(145deg, #2a2a3c, #1f1f2f); /* DAHA AÇIK */
-            border: 1px solid #3a3a4c; /* DAHA AÇIK */
+            background: linear-gradient(145deg, var(--card-bg), #1f1f2f);
+            border: 1px solid var(--border-color);
             padding: 30px;
             border-radius: 8px;
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .feature-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 102, 204, 0.3);
-            border-color: #0066cc;
+            border-color: var(--secondary-color);
         }
 
         .feature-card::before {
@@ -515,8 +552,9 @@
         .feature-icon {
             font-size: 40px;
             margin-bottom: 20px;
-            background: linear-gradient(90deg, #4da6ff, #0066cc); /* DAHA AÇIK MAVİ */
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
@@ -530,12 +568,13 @@
             font-size: 16px;
             line-height: 1.6;
             margin-bottom: 20px;
-            color: #d0d0e0; /* DAHA AÇIK */
+            color: var(--medium-text);
+            flex-grow: 1;
         }
 
         .feature-select {
-            background: linear-gradient(90deg, #4da6ff, #0066cc); /* DAHA AÇIK MAVİ */
-            color: #1a1a2a;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: var(--dark-bg);
             border: none;
             padding: 10px 20px;
             cursor: pointer;
@@ -543,21 +582,24 @@
             font-weight: bold;
             border-radius: 4px;
             width: 100%;
+            margin-top: auto;
         }
 
-        .feature-select:hover {
+        .feature-select:hover,
+        .feature-select:focus {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0, 102, 204, 0.5);
+            outline: none;
         }
 
         .feature-select.selected {
             background: linear-gradient(90deg, #66ff99, #00cc66);
         }
 
-        /* HİZMETLER BÖLÜMÜ - Ana hizmetlerimiz */
+        /* HİZMETLER BÖLÜMÜ */
         .services {
             padding: 100px 0;
-            background-color: rgba(26, 26, 42, 0.8); /* DAHA AÇIK */
+            background-color: rgba(26, 26, 42, 0.8);
         }
 
         .services-grid {
@@ -567,27 +609,31 @@
         }
 
         .service-card {
-            background: linear-gradient(145deg, #2a2a3c, #1f1f2f); /* DAHA AÇIK */
-            border: 1px solid #3a3a4c; /* DAHA AÇIK */
+            background: linear-gradient(145deg, var(--card-bg), #1f1f2f);
+            border: 1px solid var(--border-color);
             padding: 40px 30px;
             border-radius: 8px;
             text-align: center;
             transition: all 0.3s;
             position: relative;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .service-card:hover {
             transform: scale(1.05);
             box-shadow: 0 15px 30px rgba(0, 102, 204, 0.3);
-            border-color: #0066cc;
+            border-color: var(--secondary-color);
         }
 
         .service-icon {
             font-size: 50px;
             margin-bottom: 25px;
-            background: linear-gradient(90deg, #4da6ff, #0066cc); /* DAHA AÇIK MAVİ */
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
@@ -601,13 +647,14 @@
             font-size: 16px;
             line-height: 1.6;
             margin-bottom: 25px;
-            color: #d0d0e0; /* DAHA AÇIK */
+            color: var(--medium-text);
+            flex-grow: 1;
         }
 
-        /* PROJE GALERİSİ - Yapılan projelerin gösterimi */
+        /* PROJE GALERİSİ */
         .portfolio {
             padding: 100px 0;
-            background-color: rgba(30, 30, 50, 0.8); /* DAHA AÇIK */
+            background-color: rgba(30, 30, 50, 0.8);
         }
 
         .portfolio-filter {
@@ -619,8 +666,8 @@
 
         .filter-btn {
             background: transparent;
-            border: 1px solid #3a3a4c; /* DAHA AÇIK */
-            color: #d0d0e0; /* DAHA AÇIK */
+            border: 1px solid var(--border-color);
+            color: var(--medium-text);
             padding: 8px 20px;
             margin: 5px;
             cursor: pointer;
@@ -628,10 +675,13 @@
             border-radius: 4px;
         }
 
-        .filter-btn.active, .filter-btn:hover {
-            background: linear-gradient(90deg, #4da6ff, #0066cc); /* DAHA AÇIK MAVİ */
-            color: #1a1a2a;
-            border-color: #0066cc;
+        .filter-btn.active, 
+        .filter-btn:hover,
+        .filter-btn:focus {
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: var(--dark-bg);
+            border-color: var(--secondary-color);
+            outline: none;
         }
 
         .portfolio-grid {
@@ -665,7 +715,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, transparent, rgba(10, 20, 30, 0.8)); /* DAHA AÇIK */
+            background: linear-gradient(to bottom, transparent, rgba(10, 20, 30, 0.8));
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
@@ -684,14 +734,13 @@
         }
 
         .portfolio-overlay p {
-            color: #d0d0e0; /* DAHA AÇIK */
+            color: var(--medium-text);
             font-size: 14px;
         }
 
-        /* BLOG BÖLÜMÜ - Yazılım blogu */
+        /* BLOG BÖLÜMÜ */
         .blog {
             padding: 100px 0;
-            background-color: rgba(26, 26, 42, 0.8); /* DAHA AÇIK */
             background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') no-repeat center center;
             background-size: cover;
             background-attachment: fixed;
@@ -705,7 +754,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(26, 26, 42, 0.85); /* DAHA AÇIK */
+            background: rgba(26, 26, 42, 0.85);
             z-index: 1;
         }
 
@@ -721,12 +770,15 @@
         }
 
         .blog-card {
-            background: linear-gradient(145deg, #2a2a3c, #1f1f2f); /* DAHA AÇIK */
-            border: 1px solid #3a3a4c; /* DAHA AÇIK */
+            background: linear-gradient(145deg, var(--card-bg), #1f1f2f);
+            border: 1px solid var(--border-color);
             border-radius: 8px;
             overflow: hidden;
             transition: all 0.3s;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .blog-card:hover {
@@ -752,6 +804,9 @@
 
         .blog-content {
             padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .blog-content h3 {
@@ -761,25 +816,25 @@
         }
 
         .blog-content p {
-            color: #d0d0e0; /* DAHA AÇIK */
+            color: var(--medium-text);
             margin-bottom: 15px;
             font-size: 14px;
             line-height: 1.6;
+            flex-grow: 1;
         }
 
         .blog-meta {
             display: flex;
             justify-content: space-between;
-            color: #a0a0b0; /* DAHA AÇIK */
+            color: #a0a0b0;
             font-size: 12px;
-            border-top: 1px solid #3a3a4c; /* DAHA AÇIK */
+            border-top: 1px solid var(--border-color);
             padding-top: 15px;
         }
 
-        /* İSTATİSTİKLER BÖLÜMÜ - Başarı istatistikleri */
+        /* İSTATİSTİKLER BÖLÜMÜ */
         .stats {
             padding: 80px 0;
-            background: linear-gradient(135deg, #1a1a2a, #2a2a3c); /* DAHA AÇIK */
             background: url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') no-repeat center center;
             background-size: cover;
             position: relative;
@@ -792,7 +847,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(26, 26, 42, 0.8); /* DAHA AÇIK */
+            background: rgba(26, 26, 42, 0.8);
             z-index: 1;
         }
 
@@ -813,23 +868,23 @@
         }
 
         .stat-number {
-            font-size: 48px;
+            font-size: clamp(2.5rem, 5vw, 3rem);
             font-weight: bold;
-            background: linear-gradient(90deg, #4da6ff, #0066cc); /* DAHA AÇIK MAVİ */
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 10px;
         }
 
         .stat-text {
-            color: #d0d0e0; /* DAHA AÇIK */
+            color: var(--medium-text);
             font-size: 18px;
         }
 
-        /* İLETİŞİM BÖLÜMÜ - Form ve iletişim bilgileri */
+        /* İLETİŞİM BÖLÜMÜ */
         .contact {
             padding: 100px 0;
-            background-color: rgba(30, 30, 50, 0.8); /* DAHA AÇIK */
             background: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') no-repeat center center;
             background-size: cover;
             position: relative;
@@ -842,7 +897,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(30, 30, 50, 0.85); /* DAHA AÇIK */
+            background: rgba(30, 30, 50, 0.85);
             z-index: 1;
         }
 
@@ -872,12 +927,12 @@
         .contact-icon {
             width: 50px;
             height: 50px;
-            background: linear-gradient(90deg, #4da6ff, #0066cc); /* DAHA AÇIK MAVİ */
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #1a1a2a;
+            color: var(--dark-bg);
             font-size: 20px;
             flex-shrink: 0;
         }
@@ -888,12 +943,22 @@
         }
 
         .contact-details p {
-            color: #d0d0e0; /* DAHA AÇIK */
+            color: var(--medium-text);
+        }
+
+        .instagram-highlight {
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: var(--dark-bg);
+            padding: 10px 15px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 10px;
+            display: inline-block;
         }
 
         .contact-form {
-            background: linear-gradient(145deg, #2a2a3c, #1f1f2f); /* DAHA AÇIK */
-            border: 1px solid #3a3a4c; /* DAHA AÇIK */
+            background: linear-gradient(145deg, var(--card-bg), #1f1f2f);
+            border: 1px solid var(--border-color);
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -915,9 +980,9 @@
         .form-group select {
             width: 100%;
             padding: 12px;
-            background-color: rgba(50, 50, 70, 0.8); /* DAHA AÇIK */
-            border: 1px solid #3a3a4c; /* DAHA AÇIK */
-            color: #f0f0f0;
+            background-color: rgba(50, 50, 70, 0.8);
+            border: 1px solid var(--border-color);
+            color: var(--light-text);
             font-size: 16px;
             border-radius: 4px;
             transition: all 0.3s;
@@ -927,7 +992,7 @@
         .form-group textarea:focus,
         .form-group select:focus {
             outline: none;
-            border-color: #0066cc;
+            border-color: var(--secondary-color);
             box-shadow: 0 0 10px rgba(0, 102, 204, 0.4);
         }
 
@@ -944,11 +1009,11 @@
             background-size: 16px;
         }
 
-        /* FOOTER - Alt bilgi ve sosyal medya bağlantıları */
+        /* FOOTER */
         footer {
-            background-color: #0f0f1f; /* DAHA AÇIK */
+            background-color: var(--darker-bg);
             padding: 50px 0 20px;
-            border-top: 1px solid #3a3a4c; /* DAHA AÇIK */
+            border-top: 1px solid var(--border-color);
         }
 
         .footer-content {
@@ -971,7 +1036,7 @@
             position: absolute;
             width: 50px;
             height: 2px;
-            background: linear-gradient(90deg, #4da6ff, #0066cc); /* DAHA AÇIK MAVİ */
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
             bottom: 0;
             left: 0;
         }
@@ -979,7 +1044,7 @@
         .footer-section p {
             line-height: 1.6;
             margin-bottom: 15px;
-            color: #d0d0e0; /* DAHA AÇIK */
+            color: var(--medium-text);
         }
 
         .footer-section ul {
@@ -991,14 +1056,16 @@
         }
 
         .footer-section ul li a {
-            color: #d0d0e0; /* DAHA AÇIK */
+            color: var(--medium-text);
             text-decoration: none;
             transition: all 0.3s;
         }
 
-        .footer-section ul li a:hover {
-            color: #4da6ff;
+        .footer-section ul li a:hover,
+        .footer-section ul li a:focus {
+            color: var(--primary-color);
             padding-left: 5px;
+            outline: none;
         }
 
         .social-icons {
@@ -1013,29 +1080,28 @@
             justify-content: center;
             width: 40px;
             height: 40px;
-            background: linear-gradient(90deg, #4da6ff, #0066cc); /* DAHA AÇIK MAVİ */
-            color: #1a1a2a;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: var(--dark-bg);
             border-radius: 50%;
             text-decoration: none;
             transition: all 0.3s;
         }
 
-        .social-icons a:hover {
+        .social-icons a:hover,
+        .social-icons a:focus {
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0, 102, 204, 0.5);
+            outline: none;
         }
 
-        .instagram-highlight {
-            background: linear-gradient(90deg, #4da6ff, #0066cc); /* DAHA AÇIK MAVİ */
-            color: #1a1a2a;
-            padding: 10px 15px;
-            border-radius: 4px;
-            font-weight: bold;
-            margin-top: 10px;
-            display: inline-block;
+        .copyright {
+            text-align: center;
+            color: var(--medium-text);
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
         }
 
-        /* RESPONSIVE TASARIM - Mobil cihazlar için uyumluluk */
+        /* RESPONSIVE TASARIM */
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: row;
@@ -1051,10 +1117,10 @@
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background: linear-gradient(145deg, #1a1a2a, #2a2a3c);
+                background: linear-gradient(145deg, var(--dark-bg), var(--card-bg));
                 display: none;
                 padding: 20px 0;
-                border-top: 1px solid #3a3a4c;
+                border-top: 1px solid var(--border-color);
                 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
             }
             
@@ -1089,9 +1155,10 @@
                 background: rgba(50, 50, 70, 0.6);
             }
             
-            nav ul li a:hover {
+            nav ul li a:hover,
+            nav ul li a:focus {
                 background: linear-gradient(90deg, rgba(77, 166, 255, 0.3), rgba(0, 102, 204, 0.3));
-                color: #4da6ff;
+                color: var(--primary-color);
                 transform: translateX(5px);
             }
             
@@ -1124,23 +1191,57 @@
                 left: 50%;
                 transform: translateX(-50%);
             }
+            
+            .modal-footer {
+                justify-content: center;
+            }
+            
+            .modal-footer .btn {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+
+        /* ERİŞİLEBİLİRLİK İYİLEŞTİRMELERİ */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* PERFORMANS İYİLEŞTİRMELERİ */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- YANLARDAN AKAN KODLAR - Hacker teması için özel efekt -->
-    <div class="code-stream left"></div>
-    <div class="code-stream right"></div>
+    <!-- YANLARDAN AKAN KODLAR -->
+    <div class="code-stream left" aria-hidden="true"></div>
+    <div class="code-stream right" aria-hidden="true"></div>
 
-    <!-- MODAL - Instagram DM gönderimi için -->
-    <div class="modal" id="instagramModal">
+    <!-- MODAL -->
+    <div class="modal" id="instagramModal" role="dialog" aria-labelledby="modalTitle" aria-describedby="modalDescription">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>Instagram DM Gönder</h2>
-                <button class="close-modal">&times;</button>
+                <h2 id="modalTitle">Instagram DM Gönder</h2>
+                <button class="close-modal" aria-label="Modalı kapat">&times;</button>
             </div>
             <div class="modal-body">
-                <p>Mesajınız hazır! Aşağıdaki butona tıklayarak Instagram'a gidebilir ve mesajınızı doğrudan bize gönderebilirsiniz.</p>
+                <p id="modalDescription">Mesajınız hazır! Aşağıdaki butona tıklayarak Instagram'a gidebilir ve mesajınızı doğrudan bize gönderebilirsiniz.</p>
                 <div class="message-preview" id="messagePreview"></div>
                 <p><strong>Adımlar:</strong></p>
                 <ol>
@@ -1157,7 +1258,7 @@
         </div>
     </div>
 
-    <!-- HEADER - Navigasyon ve logo bölümü -->
+    <!-- HEADER -->
     <header>
         <div class="container header-container">
             <div class="logo">
@@ -1166,11 +1267,11 @@
                 </div>
                 <div class="logo-text">Josephware</div>
             </div>
-            <div class="menu-toggle" id="mobile-menu">
+            <button class="menu-toggle" id="mobile-menu" aria-label="Menüyü aç/kapat" aria-expanded="false" aria-controls="main-nav">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
             <nav id="main-nav">
                 <ul>
                     <li><a href="#home">Ana Sayfa</a></li>
@@ -1183,7 +1284,7 @@
         </div>
     </header>
 
-    <!-- HERO BÖLÜMÜ - Ana tanıtım alanı -->
+    <!-- HERO BÖLÜMÜ -->
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>Josephware</h1>
@@ -1192,14 +1293,14 @@
         </div>
     </section>
 
-    <!-- ÖZELLİKLER BÖLÜMÜ - Hizmet özellikleri kataloğu -->
+    <!-- ÖZELLİKLER BÖLÜMÜ -->
     <section class="features" id="features">
         <div class="container">
             <h2 class="section-title">Yazılım Özellikleri Kataloğu</h2>
             <div class="features-grid">
                 <!-- Özellik 1 -->
                 <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-code"></i></div>
+                    <div class="feature-icon"><i class="fas fa-code" aria-hidden="true"></i></div>
                     <h3>Web Geliştirme</h3>
                     <p>Modern, responsive ve kullanıcı dostu web siteleri ve web uygulamaları geliştiriyoruz.</p>
                     <button class="feature-select">Bu Özelliği İstiyorum</button>
@@ -1207,7 +1308,7 @@
                 
                 <!-- Özellik 2 -->
                 <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-shopping-cart"></i></div>
+                    <div class="feature-icon"><i class="fas fa-shopping-cart" aria-hidden="true"></i></div>
                     <h3>E-Ticaret Çözümleri</h3>
                     <p>Güvenli ve ölçeklenebilir e-ticaret platformları ile online satışlarınızı artırın.</p>
                     <button class="feature-select">Bu Özelliği İstiyorum</button>
@@ -1215,7 +1316,7 @@
                 
                 <!-- Özellik 3 -->
                 <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-building"></i></div>
+                    <div class="feature-icon"><i class="fas fa-building" aria-hidden="true"></i></div>
                     <h3>Kurumsal Yazılım</h3>
                     <p>İş süreçlerinizi optimize eden özelleştirilmiş kurumsal yazılım çözümleri.</p>
                     <button class="feature-select">Bu Özelliği İstiyorum</button>
@@ -1223,7 +1324,7 @@
                 
                 <!-- Özellik 4 -->
                 <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-chart-bar"></i></div>
+                    <div class="feature-icon"><i class="fas fa-chart-bar" aria-hidden="true"></i></div>
                     <h3>Veri Analitiği</h3>
                     <p>Büyük veri analizi ve görselleştirme ile iş kararlarınızı veriye dayandırın.</p>
                     <button class="feature-select">Bu Özelliği İstiyorum</button>
@@ -1232,14 +1333,14 @@
         </div>
     </section>
 
-    <!-- HİZMETLER BÖLÜMÜ - Ana hizmetlerimiz -->
+    <!-- HİZMETLER BÖLÜMÜ -->
     <section class="services" id="services">
         <div class="container">
             <h2 class="section-title">Hizmetlerimiz</h2>
             <div class="services-grid">
                 <!-- Hizmet 1 -->
                 <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+                    <div class="service-icon"><i class="fas fa-laptop-code" aria-hidden="true"></i></div>
                     <h3>Özelleştirilmiş Yazılım</h3>
                     <p>İşletmenizin ihtiyaçlarına özel olarak geliştirilmiş yazılım çözümleri.</p>
                     <a href="#contact" class="btn">Teklif Al</a>
@@ -1247,7 +1348,7 @@
                 
                 <!-- Hizmet 2 -->
                 <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-headset"></i></div>
+                    <div class="service-icon"><i class="fas fa-headset" aria-hidden="true"></i></div>
                     <h3>Danışmanlık</h3>
                     <p>Teknoloji stratejinizi belirlemede uzman danışmanlık hizmeti.</p>
                     <a href="#contact" class="btn">Teklif Al</a>
@@ -1255,7 +1356,7 @@
                 
                 <!-- Hizmet 3 -->
                 <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-tools"></i></div>
+                    <div class="service-icon"><i class="fas fa-tools" aria-hidden="true"></i></div>
                     <h3>Destek & Bakım</h3>
                     <p>Yazılımınızın sürekli güncel ve sorunsuz çalışması için destek hizmeti.</p>
                     <a href="#contact" class="btn">Teklif Al</a>
@@ -1264,7 +1365,7 @@
         </div>
     </section>
 
-    <!-- PROJE GALERİSİ - Yapılan projelerin gösterimi -->
+    <!-- PROJE GALERİSİ -->
     <section class="portfolio" id="portfolio">
         <div class="container">
             <h2 class="section-title">Projelerimiz</h2>
@@ -1277,7 +1378,7 @@
             <div class="portfolio-grid">
                 <!-- Proje 1 -->
                 <div class="portfolio-item" data-category="web">
-                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Web Projesi 1">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Kurumsal Web Sitesi projesi" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3>Kurumsal Web Sitesi</h3>
                         <p>Modern tasarım ve responsive yapı</p>
@@ -1286,7 +1387,7 @@
                 
                 <!-- Proje 2 -->
                 <div class="portfolio-item" data-category="ecommerce">
-                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="E-Ticaret Sitesi">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="E-Ticaret Sitesi projesi" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3>E-Ticaret Platformu</h3>
                         <p>Güvenli alışveriş deneyimi</p>
@@ -1295,7 +1396,7 @@
                 
                 <!-- Proje 3 -->
                 <div class="portfolio-item" data-category="web">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Web Projesi 2">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Kurumsal Portal projesi" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3>Kurumsal Portal</h3>
                         <p>İş süreçleri yönetim sistemi</p>
@@ -1304,25 +1405,25 @@
                 
                 <!-- Proje 4 -->
                 <div class="portfolio-item" data-category="ecommerce">
-                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="E-Ticaret Projesi">
+                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Mağaza Yönetim Sistemi projesi" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3>Mağaza Yönetim Sistemi</h3>
                         <p>Entegre stok ve satış yönetimi</p>
                     </div>
                 </div>
                 
-                <!-- Proje 5 - Sosyal Medya Yönetimi -->
+                <!-- Proje 5 -->
                 <div class="portfolio-item" data-category="social">
-                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Sosyal Medya Yönetimi">
+                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Sosyal Medya Yönetimi projesi" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3>Sosyal Medya Yönetimi</h3>
                         <p>Marka bilinirliği ve etkileşim artırma</p>
                     </div>
                 </div>
                 
-                <!-- Proje 6 - Sosyal Medya Yönetimi -->
+                <!-- Proje 6 -->
                 <div class="portfolio-item" data-category="social">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Sosyal Medya Kampanyası">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Sosyal Medya Kampanyası projesi" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3>Sosyal Medya Kampanyası</h3>
                         <p>Hedef kitleye ulaşma ve dönüşüm optimizasyonu</p>
@@ -1332,7 +1433,7 @@
         </div>
     </section>
 
-    <!-- BLOG BÖLÜMÜ - Yazılım blogu -->
+    <!-- BLOG BÖLÜMÜ -->
     <section class="blog" id="blog">
         <div class="container">
             <h2 class="section-title">Blog</h2>
@@ -1340,14 +1441,14 @@
                 <!-- Blog 1 -->
                 <div class="blog-card">
                     <div class="blog-image">
-                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Yapay Zeka">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Yapay Zeka ve Yazılım Geliştirme" loading="lazy">
                     </div>
                     <div class="blog-content">
                         <h3>Yapay Zeka ve Yazılım Geliştirme</h3>
                         <p>Yapay zeka teknolojilerinin yazılım geliştirme süreçlerine entegrasyonu ve sağladığı faydalar.</p>
                         <div class="blog-meta">
-                            <span><i class="far fa-calendar"></i> 15 Haziran 2023</span>
-                            <span><i class="far fa-user"></i> Josephware</span>
+                            <span><i class="far fa-calendar" aria-hidden="true"></i> 15 Haziran 2023</span>
+                            <span><i class="far fa-user" aria-hidden="true"></i> Josephware</span>
                         </div>
                     </div>
                 </div>
@@ -1355,14 +1456,14 @@
                 <!-- Blog 2 -->
                 <div class="blog-card">
                     <div class="blog-image">
-                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Güvenlik">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Web Uygulama Güvenliği" loading="lazy">
                     </div>
                     <div class="blog-content">
                         <h3>Web Uygulama Güvenliği</h3>
                         <p>Modern web uygulamalarında güvenlik açıkları ve korunma yöntemleri hakkında kapsamlı rehber.</p>
                         <div class="blog-meta">
-                            <span><i class="far fa-calendar"></i> 2 Temmuz 2023</span>
-                            <span><i class="far fa-user"></i> Josephware</span>
+                            <span><i class="far fa-calendar" aria-hidden="true"></i> 2 Temmuz 2023</span>
+                            <span><i class="far fa-user" aria-hidden="true"></i> Josephware</span>
                         </div>
                     </div>
                 </div>
@@ -1370,14 +1471,14 @@
                 <!-- Blog 3 -->
                 <div class="blog-card">
                     <div class="blog-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Teknoloji">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Yazılım Geliştirmede Yeni Trendler" loading="lazy">
                     </div>
                     <div class="blog-content">
                         <h3>Yazılım Geliştirmede Yeni Trendler</h3>
                         <p>2023 yılında yazılım geliştirme dünyasında öne çıkan trendler ve teknolojiler.</p>
                         <div class="blog-meta">
-                            <span><i class="far fa-calendar"></i> 20 Ağustos 2023</span>
-                            <span><i class="far fa-user"></i> Josephware</span>
+                            <span><i class="far fa-calendar" aria-hidden="true"></i> 20 Ağustos 2023</span>
+                            <span><i class="far fa-user" aria-hidden="true"></i> Josephware</span>
                         </div>
                     </div>
                 </div>
@@ -1385,7 +1486,7 @@
         </div>
     </section>
 
-    <!-- İSTATİSTİKLER BÖLÜMÜ - Başarı istatistikleri -->
+    <!-- İSTATİSTİKLER BÖLÜMÜ -->
     <section class="stats">
         <div class="container">
             <div class="stats-grid">
@@ -1409,7 +1510,7 @@
         </div>
     </section>
 
-    <!-- İLETİŞİM BÖLÜMÜ - Form ve iletişim bilgileri -->
+    <!-- İLETİŞİM BÖLÜMÜ -->
     <section class="contact" id="contact">
         <div class="container">
             <h2 class="section-title">İletişim</h2>
@@ -1417,7 +1518,7 @@
                 <div class="contact-info">
                     <div class="contact-item">
                         <div class="contact-icon">
-                            <i class="fab fa-instagram"></i>
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
                         </div>
                         <div class="contact-details">
                             <h3>Instagram</h3>
@@ -1427,7 +1528,7 @@
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
+                            <i class="fas fa-clock" aria-hidden="true"></i>
                         </div>
                         <div class="contact-details">
                             <h3>Çalışma Saatleri</h3>
@@ -1436,7 +1537,7 @@
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
                         </div>
                         <div class="contact-details">
                             <h3>E-posta</h3>
@@ -1473,7 +1574,7 @@
         </div>
     </section>
 
-    <!-- FOOTER - Alt bilgi ve sosyal medya bağlantıları -->
+    <!-- FOOTER -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -1481,10 +1582,10 @@
                     <h3>Josephware</h3>
                     <p>Profesyonel yazılım çözümleri ile işletmenizin dijital dönüşümüne liderlik ediyoruz.</p>
                     <div class="social-icons">
-                        <a href="https://www.instagram.com/01_joseph_10/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/01_joseph_10/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 <div class="footer-section">
@@ -1515,15 +1616,16 @@
     </footer>
 
     <script>
-        // HAMBURGER MENÜ - Mobil navigasyon kontrolü
+        // HAMBURGER MENÜ
         const mobileMenu = document.getElementById('mobile-menu');
         const mainNav = document.getElementById('main-nav');
 
         mobileMenu.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
             mainNav.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
+            this.classList.toggle('active');
+            this.setAttribute('aria-expanded', !isExpanded);
             
-            // Menü açıldığında body'ye scroll'u engelle
             if (mainNav.classList.contains('active')) {
                 document.body.style.overflow = 'hidden';
             } else {
@@ -1539,17 +1641,17 @@
             if (!isClickInsideNav && !isClickOnMenuToggle && mainNav.classList.contains('active')) {
                 mainNav.classList.remove('active');
                 mobileMenu.classList.remove('active');
+                mobileMenu.setAttribute('aria-expanded', 'false');
                 document.body.style.overflow = 'auto';
             }
         });
 
-        // YANLARDAN AKAN KODLAR - Hacker teması için özel efekt
+        // YANLARDAN AKAN KODLAR
         function generateRandomCode(length) {
             const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789{}[]()<>;:=+-*/%&|^~!?@#$';
             let result = '';
             for (let i = 0; i < length; i++) {
-                // Rastgele "Josephware" ekleme
-                if (Math.random() < 0.05) { // %5 olasılıkla Josephware ekle
+                if (Math.random() < 0.05) {
                     result += ' Josephware ';
                 }
                 result += characters.charAt(Math.floor(Math.random() * characters.length));
@@ -1561,7 +1663,6 @@
         function initCodeStream() {
             const codeStreams = document.querySelectorAll('.code-stream');
             codeStreams.forEach(stream => {
-                // Her akış için yeterli uzunlukta kod oluştur
                 const codeLength = 500;
                 let codeContent = '';
                 for (let i = 0; i < 8; i++) {
@@ -1569,13 +1670,12 @@
                 }
                 stream.innerHTML = codeContent;
                 
-                // Rastgele hız için animasyon süresini ayarla
                 const randomDuration = 20 + Math.random() * 15;
                 stream.style.animationDuration = `${randomDuration}s`;
             });
         }
 
-        // MODAL İŞLEMLERİ - Instagram DM gönderimi için
+        // MODAL İŞLEMLERİ
         const modal = document.getElementById('instagramModal');
         const closeModal = document.querySelector('.close-modal');
         const copyMessageBtn = document.getElementById('copyMessage');
@@ -1594,11 +1694,17 @@
             }
         });
 
+        // ESC tuşuna basınca modal'ı kapatma
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.style.display === 'flex') {
+                modal.style.display = 'none';
+            }
+        });
+
         // Mesajı kopyalama
         copyMessageBtn.addEventListener('click', function() {
             const textToCopy = messagePreview.textContent;
             navigator.clipboard.writeText(textToCopy).then(function() {
-                // Kopyalama başarılı olduğunda buton metnini değiştir
                 const originalText = copyMessageBtn.textContent;
                 copyMessageBtn.textContent = 'Kopyalandı!';
                 setTimeout(function() {
@@ -1609,52 +1715,41 @@
             });
         });
 
-        // ÖZELLİK SEÇME BUTONLARI - Kullanıcı tercihlerini kaydetme
+        // ÖZELLİK SEÇME BUTONLARI
         document.querySelectorAll('.feature-select').forEach(button => {
             button.addEventListener('click', function() {
                 const featureTitle = this.parentElement.querySelector('h3').textContent;
                 
-                // Eğer buton zaten seçiliyse (işaretliyse) toggle işlemi yap
                 if (this.classList.contains('selected')) {
-                    // Seçimi kaldır
                     this.innerHTML = 'Bu Özelliği İstiyorum';
                     this.classList.remove('selected');
                     this.disabled = false;
                     
-                    // Bildirim göster
                     showNotification(`"${featureTitle}" özelliği seçiminden vazgeçildi.`);
                 } else {
-                    // Buton görünümünü güncelle (seçili hale getir)
                     this.innerHTML = '<i class="fas fa-check"></i> Seçildi';
                     this.classList.add('selected');
                     
-                    // Instagram DM için mesaj hazırla
                     const instagramMessage = `Merhaba Josephware!\n\nWeb sitenizden bir özellik talebim var:\n\nİstediğim Özellik: ${featureTitle}\n\nBu özellik hakkında detaylı bilgi almak istiyorum. Teşekkürler!`;
                     
-                    // Modal başlığını güncelle
                     document.querySelector('.modal-header h2').textContent = 'Özellik Talebi Gönder';
                     
-                    // Mesajı modal'da göster
                     messagePreview.textContent = instagramMessage;
                     
-                    // Modal'ı aç
                     modal.style.display = 'flex';
                     
-                    // Bildirim göster
                     showNotification(`"${featureTitle}" özelliği için talep oluşturuldu.`);
                 }
             });
         });
 
-        // PROJE FİLTRELEME - Portfolio bölümü için filtreleme işlevi
+        // PROJE FİLTRELEME
         document.querySelectorAll('.filter-btn').forEach(button => {
             button.addEventListener('click', function() {
-                // Tüm butonlardan active classını kaldır
                 document.querySelectorAll('.filter-btn').forEach(btn => {
                     btn.classList.remove('active');
                 });
                 
-                // Tıklanan butona active classını ekle
                 this.classList.add('active');
                 
                 const filter = this.getAttribute('data-filter');
@@ -1670,14 +1765,14 @@
             });
         });
 
-        // BİLDİRİM GÖSTERME - Kullanıcıya geri bildirim sağlama
+        // BİLDİRİM GÖSTERME
         function showNotification(message) {
             const notification = document.createElement('div');
             notification.style.position = 'fixed';
             notification.style.bottom = '20px';
             notification.style.right = '20px';
-            notification.style.background = 'linear-gradient(90deg, #4da6ff, #0066cc)';
-            notification.style.color = '#1a1a2a';
+            notification.style.background = 'linear-gradient(90deg, var(--primary-color), var(--secondary-color))';
+            notification.style.color = 'var(--dark-bg)';
             notification.style.padding = '15px 25px';
             notification.style.borderRadius = '4px';
             notification.style.boxShadow = '0 5px 15px rgba(0,0,0,0.3)';
@@ -1692,16 +1787,14 @@
             }, 3000);
         }
 
-        // FORM GÖNDERİMİ - İletişim formu işleme (Instagram DM)
+        // FORM GÖNDERİMİ
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Form verilerini al
             const name = document.getElementById('name').value;
             const service = document.getElementById('service').value;
             const message = document.getElementById('message').value;
             
-            // Instagram DM için mesajı hazırla
             const serviceTexts = {
                 'web': 'Web Geliştirme',
                 'ecommerce': 'E-Ticaret',
@@ -1714,31 +1807,28 @@
             
             const instagramMessage = `Merhaba Josephware!\n\nBen: ${name}\nİlgilendiğim hizmet: ${serviceTexts[service]}\n\nMesajım:\n${message}\n\nTeşekkürler!`;
             
-            // Mesajı modal'da göster
             messagePreview.textContent = instagramMessage;
             
-            // Modal'ı göster
             modal.style.display = 'flex';
             
-            // Formu sıfırla
             this.reset();
         });
 
-        // SAYFA YÜKLENDİĞİNDE - Tüm işlevleri başlatma
+        // SAYFA YÜKLENDİĞİNDE
         window.addEventListener('load', function() {
             initCodeStream();
         });
 
-        // DÜZGÜN KAYDIRMA - Navigasyon bağlantıları için smooth scroll
+        // DÜZGÜN KAYDIRMA
         document.querySelectorAll('nav a, .btn[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
                 
-                // Mobil menüyü kapat
                 if (window.innerWidth <= 768) {
                     mainNav.classList.remove('active');
                     mobileMenu.classList.remove('active');
+                    mobileMenu.setAttribute('aria-expanded', 'false');
                     document.body.style.overflow = 'auto';
                 }
                 
@@ -1748,7 +1838,7 @@
             });
         });
 
-        // SCROLL OLAYI - Header'a gölge ekleme ve sticky özelliği
+        // SCROLL OLAYI
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
             if (window.scrollY > 50) {
