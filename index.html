@@ -1207,11 +1207,16 @@
                 themeIcon.classList.remove('fa-sun');
                 themeIcon.classList.add('fa-moon');
             }
+            
+            // Tema değişince kod akışını yeniden oluştur
+            generateCodeLines();
         });
 
         // ARKA PLAN KOD EFEKTLERİ
         function generateCodeLines() {
             const codeBackground = document.getElementById('codeBackground');
+            codeBackground.innerHTML = ''; // Önceki kodları temizle
+            
             const codeSnippets = [
                 'function developSolution() {',
                 'const innovation = new Idea();',
@@ -1242,7 +1247,7 @@
             
             // Ekran boyutuna göre satır sayısını belirle
             const screenWidth = window.innerWidth;
-            const linesCount = Math.floor(screenWidth / 20);
+            const linesCount = Math.min(Math.floor(screenWidth / 20), 50); // Maksimum 50 satır
             
             for (let i = 0; i < linesCount; i++) {
                 const codeLine = document.createElement('div');
@@ -1255,9 +1260,11 @@
                 // Rastgele konum ve gecikme
                 const leftPosition = Math.random() * 100;
                 const animationDelay = Math.random() * 20;
+                const animationDuration = 15 + Math.random() * 15;
                 
                 codeLine.style.left = `${leftPosition}%`;
                 codeLine.style.animationDelay = `${animationDelay}s`;
+                codeLine.style.animationDuration = `${animationDuration}s`;
                 
                 codeBackground.appendChild(codeLine);
             }
@@ -1342,8 +1349,6 @@
 
         // PENCERE BOYUTU DEĞİŞTİĞİNDE
         window.addEventListener('resize', function() {
-            const codeBackground = document.getElementById('codeBackground');
-            codeBackground.innerHTML = '';
             generateCodeLines();
         });
 
